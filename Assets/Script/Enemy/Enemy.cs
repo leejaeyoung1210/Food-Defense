@@ -11,7 +11,6 @@ public class Enemy : MonoBehaviour
     public WayPoint currentPath;
     private int currentPoint;
 
-    public RectTransform bar;
 
     private void Awake()
     {
@@ -25,15 +24,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-
-        Vector3 screenpos = Camera.main.WorldToScreenPoint(transform.position);
-        bar.position = screenpos;
-
         transform.position = Vector3.MoveTowards(transform.position, targetposition, enemySpeed * Time.deltaTime);
 
         float distanceToTarget = Vector3.Distance(transform.position, targetposition);  
 
-        if (distanceToTarget<0.1f)
+        if (distanceToTarget<0.01f)
         {              
             if (currentPoint == currentPath.wayindex)
             {

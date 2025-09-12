@@ -13,10 +13,8 @@ public class EnemySpawner : MonoBehaviour
         if(SpawnTime> SpawnIntaval)
         {
             SpawnTime = 0f;
-            Spawn();
-            
-        }
-        
+            Spawn();            
+        }        
     }
 
     private void Spawn()

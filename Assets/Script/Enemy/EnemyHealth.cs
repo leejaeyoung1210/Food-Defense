@@ -1,31 +1,38 @@
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 public class EnemyHealth : Living
 {
+    public EnemyData data;
     public Slider healthSlider;
     public Enemy enemy;
 
     public static event System.Action<GameObject> OnAnyEnemyRemoved;
-    protected override void OnEnble()
-    {
-        base.OnEnble();
 
+ 
+
+    protected override void OnEnable()
+    {
+        MaxHealth = data.MaxHp;
+        base.OnEnable();
+        healthSlider = GetComponentInChildren<Slider>(true);
         healthSlider.value = health/MaxHealth;
-        healthSlider.enabled = false;
+        
     }
 
     public override void OnDamage(float damage, Vector2 hitPoint)
     {
         base.OnDamage(damage, hitPoint);
         healthSlider.value = health/MaxHealth;
+        Debug.Log("공격받음");
     }
 
     protected override void Die()
     {
         base.Die();
-
-        gameObject.SetActive(false);
+        GetComponent<Collider2D>().enabled = false;
+        Destroy(gameObject); 
 
     }
     void OnDisable()  

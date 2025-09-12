@@ -6,7 +6,7 @@ public class Living : MonoBehaviour, IDamagable
 
     public float health { get; protected set; }
     public bool IsDead { get; protected set; }
-    protected virtual void OnEnble()
+    protected virtual void OnEnable()
     {
         IsDead = false;
         health = MaxHealth;
@@ -14,6 +14,7 @@ public class Living : MonoBehaviour, IDamagable
 
     public virtual void OnDamage(float damage, Vector2 hitPoint)
     {
+        if (IsDead) return;
         health -= damage;   
         if(health <= 0 && !IsDead)
         {

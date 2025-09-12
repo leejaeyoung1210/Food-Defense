@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 10
+  data: {fileID: 11400000, guid: a5890b1e09328c040b39425cb6d3e8fd, type: 2}
   healthSlider: {fileID: 7765897054590793922}
   enemy: {fileID: 6089341073546817968}
 --- !u!1 &8222282885603330393

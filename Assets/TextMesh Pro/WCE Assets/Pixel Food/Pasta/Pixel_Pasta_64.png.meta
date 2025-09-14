@@ -1,9 +1,17 @@
 fileFormatVersion: 2
-guid: 07093360f2641474d944e703b1c55065
+guid: adb8a02fdaeaa4849ad2bcad775bda69
+AssetOrigin:
+  serializedVersion: 1
+  productId: 277748
+  packageName: Pasta Icons - Pixel Art Food - 2D Cooking, Cuisine and Restaurant
+    Bundle
+  packageVersion: 1.0
+  assetPath: Assets/WCE Assets/Pixel Food/Pasta/Pixel_Pasta_64.png
+  uploadId: 649998
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +28,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,9 +72,10 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -75,9 +85,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -87,9 +98,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -99,1524 +111,1611 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pixel_Pasta_128_0
+      name: Pixel_Pasta_64_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 896
-        width: 128
-        height: 128
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bef7ad0dc95a29e4498cfb2e96e38d86
-      internalID: 1127145358
+      spriteID: 9253294331aa6fb40ab96a70c48c6287
+      internalID: -555674406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_1
+      name: Pixel_Pasta_64_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07580d13407769145bddda3315b06088
+      internalID: -1514019188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 896
-        width: 128
-        height: 128
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca553d1bb005d034d8ab9fcb237890a0
-      internalID: -1095386180
+      spriteID: ddc0c315af295194fb01910f273f1cf9
+      internalID: -1627619318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_2
+      name: Pixel_Pasta_64_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1bbaaea953fc144b7b467a57ef7fa3
+      internalID: -1668854142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_4
       rect:
         serializedVersion: 2
         x: 256
-        y: 896
-        width: 128
-        height: 128
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f5e146d472535a41b4097bb0ef03fba
-      internalID: 1894692382
+      spriteID: 2be533d7397927b40b072ddd8a35500f
+      internalID: -1883751847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_3
+      name: Pixel_Pasta_64_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf9bcde9df659e489a86e8e8d7793a5
+      internalID: -1047840499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_6
       rect:
         serializedVersion: 2
         x: 384
-        y: 896
-        width: 128
-        height: 128
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 396a384c5a94c1d4fb91e90c37c6b2fe
-      internalID: 1495126370
+      spriteID: 46d28e288c95533428d4d9c33df263e1
+      internalID: 1926429445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_4
+      name: Pixel_Pasta_64_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5b6691ca1064440a8fbf1ffc69ca96
+      internalID: 715074176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_8
       rect:
         serializedVersion: 2
         x: 512
-        y: 896
-        width: 128
-        height: 128
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6eae0f513055dc84a951a85348b3ab88
-      internalID: 1381818035
+      spriteID: d5940f35baa6a904aa452aab7e0ef9b1
+      internalID: 427517479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20b6bbddb22e03f4eac20241c32303b2
-      internalID: -715196021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08b73721d2cce61408c1faf9957607bb
-      internalID: 1703024620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba6c11880409db343a46d36e76f9e8a7
-      internalID: -1405103385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_8
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 896
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b34874a6b8a4ed429520ff240ad8c38
-      internalID: 1131409253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 768
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91cd405e2707f3f43bb89d8f6e0f3738
-      internalID: 1380413694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_10
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 768
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e22bcd8792a52749811e11edae2ec8a
-      internalID: 758442342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_11
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 768
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bd244616374b0d43bc35e2cf1191f83
-      internalID: -15516390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_12
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 768
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adddf96e8711aba458ecb0ea5721d2de
-      internalID: -1729942450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_13
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 768
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16a5484ce46958344a489726e96da3ce
-      internalID: -1024127335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_14
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 768
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9d1229c30e32bf498b1caca1e93c403
-      internalID: 3192421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_15
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 768
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2317e94e83cb11042b28d1bb08ce4b02
-      internalID: -1583693352
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_16
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 768
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db0d5282737ce604ab33d9be734812fc
-      internalID: -840064053
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_17
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 768
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb1db204cee65654083b3c30a3baaea8
-      internalID: -399559974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_18
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 640
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d8280aefb7acfc44a83e6a30f4058c6
-      internalID: -752819665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_19
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 640
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2982a5c9c554a2498484150d243e872
-      internalID: -1028424872
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_20
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 640
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d1d0015f158927469da9f91f571a337
-      internalID: -1970550130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_21
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 640
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2b135bacb5111f47af6e07850499589
-      internalID: 172145320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_22
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 640
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 701fb24463af7aa469a7e774877ddb8f
-      internalID: 1416113515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_23
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 640
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0aa9846a6dfb9c54b8a2bfd6bec09fff
-      internalID: 1098212122
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_24
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 640
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e93915080f1a134d88155e40721ff62
-      internalID: 2015222356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_25
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 640
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 504cef432fe6fda40acbbc5691db89e7
-      internalID: 2068380370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_26
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 640
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55204a0ecce030643b640cabb08cf966
-      internalID: -1812276279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_27
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc5fbf211cc402f4e9625d0c18239cb2
-      internalID: 889543711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_28
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4af5c62188091e47a1beb9f4ed89835
-      internalID: -1900723486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_29
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ed98e4bc1c01734da92351e6829b871
-      internalID: 2090327382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_30
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49bade637e387864d8fd9521a48c029e
-      internalID: 1708402376
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_31
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7ded8c67616f2543a9d38d2bdb8a1cb
-      internalID: -1795645423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_32
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73606144b10ed0d4682a34980aff3014
-      internalID: 1289931326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_33
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db22f51b98a25244daf4237e9a22351c
-      internalID: 2135964144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_34
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba28643cb82252044a5251f6a70c1290
-      internalID: -1204680118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_35
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 512
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc2e757be7b6e2f468d958469030f9f6
-      internalID: -2133979643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_36
+      name: Pixel_Pasta_64_9
       rect:
         serializedVersion: 2
         x: 0
         y: 384
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9897ba723ab4534eb80dbaf827e908a
-      internalID: -523048609
+      spriteID: e95e4553d304d10498beda358eb6fde8
+      internalID: -939471722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_37
+      name: Pixel_Pasta_64_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4593b94d2909a794a92d4687314603d8
+      internalID: 1529149799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_11
       rect:
         serializedVersion: 2
         x: 128
         y: 384
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37d69289b0d520248a799657cec2f65a
-      internalID: -1574037032
+      spriteID: ff17cd614cbed484398dae3ce695ff6c
+      internalID: -1795579114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_38
+      name: Pixel_Pasta_64_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc585905d6e7344cb583c0494e8dc1a
+      internalID: 1154497051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_13
       rect:
         serializedVersion: 2
         x: 256
         y: 384
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d7bdfcaf63e4084c90a216f54b9de74
-      internalID: 143601596
+      spriteID: b406f769145c6d6478863d8fe0185bd6
+      internalID: -1462395661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_39
+      name: Pixel_Pasta_64_14
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83c82a5bda28c04bb47d974d3636768
+      internalID: -1439003721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_15
       rect:
         serializedVersion: 2
         x: 384
         y: 384
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12002bf8507380244b0035690ce3efc7
-      internalID: 838259532
+      spriteID: 4f5822eab04f2e04bb5d2d1774bc2161
+      internalID: -993110273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_40
+      name: Pixel_Pasta_64_16
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da29848477d88645bf5adcf37ce35cf
+      internalID: -2097681125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_17
       rect:
         serializedVersion: 2
         x: 512
         y: 384
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 566aecad7cd66e64fae276a9d0317b62
-      internalID: -1783545856
+      spriteID: cdda41180cf68bd49b3a69cee3b671c1
+      internalID: 607226687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_41
+      name: Pixel_Pasta_64_18
       rect:
         serializedVersion: 2
-        x: 640
-        y: 384
-        width: 128
-        height: 128
+        x: 0
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63bca6bc308b1b742a573d576fd3019e
-      internalID: -9271799
+      spriteID: 95f4419fa0a9d394b81bc46df333fa54
+      internalID: -565363177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_42
+      name: Pixel_Pasta_64_19
       rect:
         serializedVersion: 2
-        x: 768
-        y: 384
-        width: 128
-        height: 128
+        x: 64
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27eb04dfdc49c91478a897c30808d7e7
-      internalID: -857168852
+      spriteID: a563dd82a2023bb45afcc9cc0bc88e80
+      internalID: -1923502615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_43
+      name: Pixel_Pasta_64_20
       rect:
         serializedVersion: 2
-        x: 896
-        y: 384
-        width: 128
-        height: 128
+        x: 128
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 681315263f9beea4eb37d6cd82d03e37
-      internalID: -761281197
+      spriteID: 9c4167e0a164b9f4389e9ae664db6ffb
+      internalID: -44935898
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_44
+      name: Pixel_Pasta_64_21
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 384
-        width: 128
-        height: 128
+        x: 192
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e2fc367ee1015d4c9a0c59eaadc16df
-      internalID: 870435897
+      spriteID: 26ee94ba0671f194892fe6f2bbcbbaa8
+      internalID: -1216257927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_45
+      name: Pixel_Pasta_64_22
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3efb32ff6062551438140ceedcecaffe
+      internalID: -727244165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_23
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ffac7475a40184da807663e3bbb6b2
+      internalID: 1359172323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f96ae162cf19a45a974374cc4cc460
+      internalID: -222101172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_25
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51601b8e7999f834f9c5aa101969dd21
+      internalID: 996899468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8836b15b5c56bd46ab9664ba14704b2
+      internalID: 1499497849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_27
       rect:
         serializedVersion: 2
         x: 0
         y: 256
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf36545b11738614ca33deedcc5b01d9
-      internalID: 347586942
+      spriteID: 3f71e0e4c842f6a4d88eec8fcd07ab3d
+      internalID: 437129910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_46
+      name: Pixel_Pasta_64_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3275f42d18b3b7419fa760a6034e027
+      internalID: 212211034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_29
       rect:
         serializedVersion: 2
         x: 128
         y: 256
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2debad7a6b7612048964ce723fe2cba6
-      internalID: -1377818217
+      spriteID: 82d58903946e3b740b423494b598e064
+      internalID: -1876235390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_47
+      name: Pixel_Pasta_64_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4a28e820d146345adf4409aceb5018
+      internalID: 1608261608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_31
       rect:
         serializedVersion: 2
         x: 256
         y: 256
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e4a32b73392d024a80bc2b7160e9ddc
-      internalID: 1440016466
+      spriteID: b6fb013550ba6a84689a117841dc9020
+      internalID: -1998574080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_48
+      name: Pixel_Pasta_64_32
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc025d7ded8bb9c44812f347263d168e
+      internalID: 2112039396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_33
       rect:
         serializedVersion: 2
         x: 384
         y: 256
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 497864d33ec98c5459441fb164612827
-      internalID: 580394000
+      spriteID: f0716df6a0d36834f842de9a82aa79c2
+      internalID: 565070426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_49
+      name: Pixel_Pasta_64_34
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716bd9dc0b004334890ce5aae31f7b24
+      internalID: 1245658405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_35
       rect:
         serializedVersion: 2
         x: 512
         y: 256
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ffaa73d399697d46a6b13b691455900
-      internalID: -805727565
+      spriteID: 867351e3735613842912411596e80d62
+      internalID: 1975074820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_50
+      name: Pixel_Pasta_64_36
       rect:
         serializedVersion: 2
-        x: 640
-        y: 256
-        width: 128
-        height: 128
+        x: 0
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70cd3912b697e2a4d87c1c2320158c5b
-      internalID: 1685017819
+      spriteID: 9fdac9ceb850c254aaf9f3777cbdb48b
+      internalID: -1890977909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_51
+      name: Pixel_Pasta_64_37
       rect:
         serializedVersion: 2
-        x: 768
-        y: 256
-        width: 128
-        height: 128
+        x: 64
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb13d6d8ea3f5484a8d0dbb224d3a53d
-      internalID: -148945614
+      spriteID: cb3dca8608c3f36439b4d31df1b7053e
+      internalID: -1075749540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_52
+      name: Pixel_Pasta_64_38
       rect:
         serializedVersion: 2
-        x: 896
-        y: 256
-        width: 128
-        height: 128
+        x: 128
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f82e89ac76551414e99911cc32e520de
-      internalID: -215869343
+      spriteID: b54864a252e6034409f805ab5c5059d5
+      internalID: -120902849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_53
+      name: Pixel_Pasta_64_39
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 256
-        width: 128
-        height: 128
+        x: 192
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5df89b98900669944a5177284fca990a
-      internalID: -776231464
+      spriteID: b76bafced9d77ef4faf6b61570785d3b
+      internalID: 1701245334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_54
+      name: Pixel_Pasta_64_40
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6fe997e1a7f3a34382824b071c8777d
+      internalID: -352489755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_41
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6788a7834b1c74a99d8271167cefe9
+      internalID: -1280219128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_42
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ddc0397080c9d41baf21b39f055ba9
+      internalID: 99223753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_43
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16af35645f3347c479aa126dd58db353
+      internalID: 1673302206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_44
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de13858f9e9b63b4985db9a54212f410
+      internalID: 921842673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_45
       rect:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d609bbe0f319b44aa3cfcba762f326c
-      internalID: 473082006
+      spriteID: 31df8cd6ef998264b83d1fd0af568e59
+      internalID: -2064009188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_55
+      name: Pixel_Pasta_64_46
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a228e7ddda1e4448bed50008bb36de
+      internalID: 322268105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_47
       rect:
         serializedVersion: 2
         x: 128
         y: 128
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 890b0badac0e5c94d9a6158ce00be492
-      internalID: -1749665819
+      spriteID: d919646b53a2fea4d813816d8b08ac1e
+      internalID: 1396972325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_56
+      name: Pixel_Pasta_64_48
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce012f2fab12d4c4c818579c848396e4
+      internalID: 139604050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_49
       rect:
         serializedVersion: 2
         x: 256
         y: 128
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad550bd83179ae4d83b9176df89ce4e
-      internalID: -1534832111
+      spriteID: 95fe3822dc06c6b4082d06d86088b2b0
+      internalID: 1396565390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_57
+      name: Pixel_Pasta_64_50
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3a7a945d13a974fbd01a4ebbe236ab
+      internalID: 918035008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_51
       rect:
         serializedVersion: 2
         x: 384
         y: 128
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3cbd9ddc29a01847aac7ab80408b336
-      internalID: 304017636
+      spriteID: b09ef82b2405bd5418f5a0fc2d8ad0b6
+      internalID: -2089066214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_58
+      name: Pixel_Pasta_64_52
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedf7bff0de5dac408b487048602b7ef
+      internalID: -1465546658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_53
       rect:
         serializedVersion: 2
         x: 512
         y: 128
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc25968ded498fd4980deb0fe52cbafe
-      internalID: 1250575913
+      spriteID: 93edfe503b746914b9835bfd43ab3dc4
+      internalID: 618170677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_59
+      name: Pixel_Pasta_64_54
       rect:
         serializedVersion: 2
-        x: 640
-        y: 128
-        width: 128
-        height: 128
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a699fba374950c4c83474fe27d32395
-      internalID: 1011046728
+      spriteID: 5a36d7be5e0510e49a3eba76052606fa
+      internalID: -1345213399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_60
+      name: Pixel_Pasta_64_55
       rect:
         serializedVersion: 2
-        x: 768
-        y: 128
-        width: 128
-        height: 128
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d1ef76b33c892747bcfb3a49b1e027b
-      internalID: 2058566197
+      spriteID: 15a9628e5dcc92548aab8470c44ea5d2
+      internalID: 2024134732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_61
+      name: Pixel_Pasta_64_56
       rect:
         serializedVersion: 2
-        x: 896
-        y: 128
-        width: 128
-        height: 128
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc6186d8dd1098247bacef5332b14446
-      internalID: -1603984738
+      spriteID: 7010d50ca3d4b3547b83cf27da8e6a2d
+      internalID: -900267713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_62
+      name: Pixel_Pasta_64_57
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 128
-        width: 128
-        height: 128
+        x: 192
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de08e4061b5518944b0d817970f2b6a3
-      internalID: 262336635
+      spriteID: fee7b5d71222c3547a691ed4d6024f2c
+      internalID: 2086258676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_63
+      name: Pixel_Pasta_64_58
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d87477259b28343ba8841a90dceae5
+      internalID: -1294472215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_59
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8aa2fe1f54830e49b9347d5e2bcf505
+      internalID: 1084666879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_60
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e1ace9d74e6eb41a5dcc3e0e30aaa3
+      internalID: 29523616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_61
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb23bde2e8811ad44aec8910be80ead4
+      internalID: -2071233961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_62
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8a57dc8d9614945a44968e418c4e6d
+      internalID: -94494925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_63
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6460dd773f959b744aa799d0cd4bbc45
-      internalID: 1126792965
+      spriteID: 192841f26dbe24e4f8c35815099a690a
+      internalID: -260187888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_64
+      name: Pixel_Pasta_64_64
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a3c457b521db043ab28da6da16e7e6
+      internalID: -2071451383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_65
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e452c7d2cab5784cb2f1fe38e855313
-      internalID: 1225086381
+      spriteID: a623f8164a55c144bb01436dd9bd14df
+      internalID: -1630910164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_65
+      name: Pixel_Pasta_64_66
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e492684e690204dbb6bad506767e45
+      internalID: 1883295902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_67
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5b80aaa858e09f4b8c1c2d0d5953d12
-      internalID: 1910351102
+      spriteID: fafcf128182a82944adab237ac9ffcef
+      internalID: -252795252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_66
+      name: Pixel_Pasta_64_68
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195f738e4c8ef9a439b1e004d283c115
+      internalID: 607776115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_69
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b90a944b94082af44845f4b4fb187d57
-      internalID: -578265747
+      spriteID: 8b8ff1ef15b73fe42b4ca9092fff48df
+      internalID: 1003124457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel_Pasta_128_67
+      name: Pixel_Pasta_64_70
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27e8ce3c467f594d88c464477cf99c6
+      internalID: -662411935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel_Pasta_64_71
       rect:
         serializedVersion: 2
         x: 512
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 966b7aab16511764daa9589c0c2553a1
-      internalID: -1160614731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_68
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 884085f7f97dd3844b462d869b23f0bb
-      internalID: 803335178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_69
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 797724165521bfc4e8d80dd7a770f526
-      internalID: 898447794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_70
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9650e4be8eb97146bd5a8994e896a00
-      internalID: 919175421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel_Pasta_128_71
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5d10edbca810434e8ec8f8e64c047e2
-      internalID: -2072503952
+      spriteID: f16d9908e104a6f41baddf3aea202720
+      internalID: -885622506
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
@@ -1626,90 +1725,83 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      Pixel_Pasta_128_0: 1127145358
-      Pixel_Pasta_128_1: -1095386180
-      Pixel_Pasta_128_10: 758442342
-      Pixel_Pasta_128_11: -15516390
-      Pixel_Pasta_128_12: -1729942450
-      Pixel_Pasta_128_13: -1024127335
-      Pixel_Pasta_128_14: 3192421
-      Pixel_Pasta_128_15: -1583693352
-      Pixel_Pasta_128_16: -840064053
-      Pixel_Pasta_128_17: -399559974
-      Pixel_Pasta_128_18: -752819665
-      Pixel_Pasta_128_19: -1028424872
-      Pixel_Pasta_128_2: 1894692382
-      Pixel_Pasta_128_20: -1970550130
-      Pixel_Pasta_128_21: 172145320
-      Pixel_Pasta_128_22: 1416113515
-      Pixel_Pasta_128_23: 1098212122
-      Pixel_Pasta_128_24: 2015222356
-      Pixel_Pasta_128_25: 2068380370
-      Pixel_Pasta_128_26: -1812276279
-      Pixel_Pasta_128_27: 889543711
-      Pixel_Pasta_128_28: -1900723486
-      Pixel_Pasta_128_29: 2090327382
-      Pixel_Pasta_128_3: 1495126370
-      Pixel_Pasta_128_30: 1708402376
-      Pixel_Pasta_128_31: -1795645423
-      Pixel_Pasta_128_32: 1289931326
-      Pixel_Pasta_128_33: 2135964144
-      Pixel_Pasta_128_34: -1204680118
-      Pixel_Pasta_128_35: -2133979643
-      Pixel_Pasta_128_36: -523048609
-      Pixel_Pasta_128_37: -1574037032
-      Pixel_Pasta_128_38: 143601596
-      Pixel_Pasta_128_39: 838259532
-      Pixel_Pasta_128_4: 1381818035
-      Pixel_Pasta_128_40: -1783545856
-      Pixel_Pasta_128_41: -9271799
-      Pixel_Pasta_128_42: -857168852
-      Pixel_Pasta_128_43: -761281197
-      Pixel_Pasta_128_44: 870435897
-      Pixel_Pasta_128_45: 347586942
-      Pixel_Pasta_128_46: -1377818217
-      Pixel_Pasta_128_47: 1440016466
-      Pixel_Pasta_128_48: 580394000
-      Pixel_Pasta_128_49: -805727565
-      Pixel_Pasta_128_5: -715196021
-      Pixel_Pasta_128_50: 1685017819
-      Pixel_Pasta_128_51: -148945614
-      Pixel_Pasta_128_52: -215869343
-      Pixel_Pasta_128_53: -776231464
-      Pixel_Pasta_128_54: 473082006
-      Pixel_Pasta_128_55: -1749665819
-      Pixel_Pasta_128_56: -1534832111
-      Pixel_Pasta_128_57: 304017636
-      Pixel_Pasta_128_58: 1250575913
-      Pixel_Pasta_128_59: 1011046728
-      Pixel_Pasta_128_6: 1703024620
-      Pixel_Pasta_128_60: 2058566197
-      Pixel_Pasta_128_61: -1603984738
-      Pixel_Pasta_128_62: 262336635
-      Pixel_Pasta_128_63: 1126792965
-      Pixel_Pasta_128_64: 1225086381
-      Pixel_Pasta_128_65: 1910351102
-      Pixel_Pasta_128_66: -578265747
-      Pixel_Pasta_128_67: -1160614731
-      Pixel_Pasta_128_68: 803335178
-      Pixel_Pasta_128_69: 898447794
-      Pixel_Pasta_128_7: -1405103385
-      Pixel_Pasta_128_70: 919175421
-      Pixel_Pasta_128_71: -2072503952
-      Pixel_Pasta_128_8: 1131409253
-      Pixel_Pasta_128_9: 1380413694
-  spritePackingTag: 
+      Pixel_Pasta_64_0: -555674406
+      Pixel_Pasta_64_1: -1514019188
+      Pixel_Pasta_64_10: 1529149799
+      Pixel_Pasta_64_11: -1795579114
+      Pixel_Pasta_64_12: 1154497051
+      Pixel_Pasta_64_13: -1462395661
+      Pixel_Pasta_64_14: -1439003721
+      Pixel_Pasta_64_15: -993110273
+      Pixel_Pasta_64_16: -2097681125
+      Pixel_Pasta_64_17: 607226687
+      Pixel_Pasta_64_18: -565363177
+      Pixel_Pasta_64_19: -1923502615
+      Pixel_Pasta_64_2: -1627619318
+      Pixel_Pasta_64_20: -44935898
+      Pixel_Pasta_64_21: -1216257927
+      Pixel_Pasta_64_22: -727244165
+      Pixel_Pasta_64_23: 1359172323
+      Pixel_Pasta_64_24: -222101172
+      Pixel_Pasta_64_25: 996899468
+      Pixel_Pasta_64_26: 1499497849
+      Pixel_Pasta_64_27: 437129910
+      Pixel_Pasta_64_28: 212211034
+      Pixel_Pasta_64_29: -1876235390
+      Pixel_Pasta_64_3: -1668854142
+      Pixel_Pasta_64_30: 1608261608
+      Pixel_Pasta_64_31: -1998574080
+      Pixel_Pasta_64_32: 2112039396
+      Pixel_Pasta_64_33: 565070426
+      Pixel_Pasta_64_34: 1245658405
+      Pixel_Pasta_64_35: 1975074820
+      Pixel_Pasta_64_36: -1890977909
+      Pixel_Pasta_64_37: -1075749540
+      Pixel_Pasta_64_38: -120902849
+      Pixel_Pasta_64_39: 1701245334
+      Pixel_Pasta_64_4: -1883751847
+      Pixel_Pasta_64_40: -352489755
+      Pixel_Pasta_64_41: -1280219128
+      Pixel_Pasta_64_42: 99223753
+      Pixel_Pasta_64_43: 1673302206
+      Pixel_Pasta_64_44: 921842673
+      Pixel_Pasta_64_45: -2064009188
+      Pixel_Pasta_64_46: 322268105
+      Pixel_Pasta_64_47: 1396972325
+      Pixel_Pasta_64_48: 139604050
+      Pixel_Pasta_64_49: 1396565390
+      Pixel_Pasta_64_5: -1047840499
+      Pixel_Pasta_64_50: 918035008
+      Pixel_Pasta_64_51: -2089066214
+      Pixel_Pasta_64_52: -1465546658
+      Pixel_Pasta_64_53: 618170677
+      Pixel_Pasta_64_54: -1345213399
+      Pixel_Pasta_64_55: 2024134732
+      Pixel_Pasta_64_56: -900267713
+      Pixel_Pasta_64_57: 2086258676
+      Pixel_Pasta_64_58: -1294472215
+      Pixel_Pasta_64_59: 1084666879
+      Pixel_Pasta_64_6: 1926429445
+      Pixel_Pasta_64_60: 29523616
+      Pixel_Pasta_64_61: -2071233961
+      Pixel_Pasta_64_62: -94494925
+      Pixel_Pasta_64_63: -260187888
+      Pixel_Pasta_64_64: -2071451383
+      Pixel_Pasta_64_65: -1630910164
+      Pixel_Pasta_64_66: 1883295902
+      Pixel_Pasta_64_67: -252795252
+      Pixel_Pasta_64_68: 607776115
+      Pixel_Pasta_64_69: 1003124457
+      Pixel_Pasta_64_7: 715074176
+      Pixel_Pasta_64_70: -662411935
+      Pixel_Pasta_64_71: -885622506
+      Pixel_Pasta_64_8: 427517479
+      Pixel_Pasta_64_9: -939471722
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 277748
-  packageName: Pasta Icons - Pixel Art Food - 2D Cooking, Cuisine and Restaurant
-    Bundle
-  packageVersion: 1.0
-  assetPath: Assets/WCE Assets/Pixel Food/Pasta/Pixel_Pasta_128.png
-  uploadId: 649998

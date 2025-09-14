@@ -68,6 +68,7 @@ public class Tower : MonoBehaviour
     private void EnemyRemoved(GameObject e)
     {
         enemies.Remove(e);
+        e.gameObject.SetActive(false);  
     }
 
     private void OnDrawGizmos()

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cc92f8b7632454ea3184c277c79293, type: 3}
   m_Name: KinData
   m_EditorClassIdentifier: 
+  pre: {fileID: 7674835996735136886, guid: b7c3b59d92548c844a34ffcb56c3f8d1, type: 3}
   range: 3
   MaxHp: 300
   attackInterval: 0

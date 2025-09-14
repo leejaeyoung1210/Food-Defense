@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e443c9d33132a84687889394788e70a, type: 3}
   m_Name: WaveData 0
   m_EditorClassIdentifier: 
-  waceNumber: 1
+  waveNumber: 0
   waveTime: 20
   slots:
   - enemy: {fileID: 11400000, guid: a5890b1e09328c040b39425cb6d3e8fd, type: 2}

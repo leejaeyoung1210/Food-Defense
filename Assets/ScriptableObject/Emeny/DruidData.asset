@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f9be3897082b924f986a51ac0879332, type: 3}
-  m_Name: TpwerData
+  m_Script: {fileID: 11500000, guid: 41cc92f8b7632454ea3184c277c79293, type: 3}
+  m_Name: DruidData
   m_EditorClassIdentifier: 
-  range: 1
-  MaxHp: 0
-  shootInterval: 2
-  shootSpeed: 2
-  damage: 20
+  range: 8
+  MaxHp: 200
+  attackInterval: 0
+  attackSpeed: 0
+  damage: 0
+  moveSpeed: 2

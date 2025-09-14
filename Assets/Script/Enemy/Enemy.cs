@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 
     public WayPoint currentPath;
     private int currentPoint;
+    public EnemyData data;
 
 
     private void Awake()
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         currentPoint = 0;
+        //enemySpeed = data.moveSpeed;    
         targetposition = currentPath.GetWayPoint(currentPoint);
     }
 

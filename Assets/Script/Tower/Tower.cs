@@ -7,7 +7,7 @@ public class Tower : MonoBehaviour
 {
     public TowerData data;
     private CircleCollider2D towerRange;
-    
+
 
     public float attackIntaval = 1f;
     public float lastAttack;
@@ -15,7 +15,7 @@ public class Tower : MonoBehaviour
 
 
     private void Awake()
-    {        
+    {
         towerRange = GetComponent<CircleCollider2D>();
     }
 
@@ -30,10 +30,10 @@ public class Tower : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other)
-    {  
+    {
         if (other.CompareTag("Enemy"))
         {
-            enemies.Add(other.gameObject);            
+            enemies.Add(other.gameObject);
         }
     }
 
@@ -42,10 +42,13 @@ public class Tower : MonoBehaviour
         if (lastAttack + attackIntaval < Time.time)
         {
             lastAttack = Time.time;
-            var target = enemies[0].GetComponent<IDamagable>();
-            if (target != null)
+            if (enemies.Count > 0)
             {
-                target.OnDamage(data.damage, transform.position);
+                var target = enemies[0].GetComponent<IDamagable>();
+                if (target != null)
+                {
+                    target.OnDamage(data.damage, transform.position);
+                }
             }
         }
     }
@@ -54,7 +57,7 @@ public class Tower : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            enemies.Remove(other.gameObject);          
+            enemies.Remove(other.gameObject);
         }
     }
     private void OnDisable()

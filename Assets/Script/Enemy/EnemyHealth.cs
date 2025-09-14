@@ -7,11 +7,11 @@ public class EnemyHealth : Living
     public EnemyData data;
     public Slider healthSlider;
     public Enemy enemy;
- 
+
 
     public static event System.Action<GameObject> OnAnyEnemyRemoved;
 
- 
+
 
     protected override void OnEnable()
     {
@@ -19,7 +19,8 @@ public class EnemyHealth : Living
         base.OnEnable();
         healthSlider = GetComponentInChildren<Slider>(true);
         healthSlider.value = health/MaxHealth;
-        
+        healthSlider.gameObject.SetActive(false);   
+
     }
     private void Update()
     {
@@ -28,6 +29,7 @@ public class EnemyHealth : Living
 
     public override void OnDamage(float damage, Vector2 hitPoint)
     {
+        healthSlider.gameObject.SetActive(true);
         base.OnDamage(damage, hitPoint);
         healthSlider.value = health/MaxHealth;
         Debug.Log($"공격받음 {healthSlider.value}");
@@ -36,15 +38,10 @@ public class EnemyHealth : Living
     protected override void Die()
     {
         base.Die();
-        GetComponent<Collider2D>().enabled = false;
-        EnemySpawner.count -= 1;
-        Destroy(gameObject); 
+        OnAnyEnemyRemoved?.Invoke(gameObject);
 
     }
-    void OnDisable()  
-    {
-        OnAnyEnemyRemoved?.Invoke(gameObject);
-    }
+    
 
 
 

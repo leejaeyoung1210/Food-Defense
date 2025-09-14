@@ -9,13 +9,13 @@ public class EnemySpawner : MonoBehaviour
     public static int count = 0;
     private void Update()
     {
-        SpawnTime += Time.deltaTime;  
-        if(SpawnTime> SpawnIntaval && count < 5)
-        {
-            SpawnTime = 0f;
-            Spawn();
-            count++;
-        }        
+        //SpawnTime += Time.deltaTime;  
+        //if(SpawnTime> SpawnIntaval && count < 5)
+        //{
+        //    SpawnTime = 0f;
+        //    Spawn();
+        //    count++;
+        //}        
     }
 
     private void Spawn()

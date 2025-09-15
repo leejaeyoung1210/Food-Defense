@@ -1,10 +1,12 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;   
 
 public class TowerSpawner : MonoBehaviour
 {
-    public GameObject towerPrefab;
+    public List<GameObject> towerPrefabs;
     private TowerSpot towerSpot;
+    private int random;
 
 
     //private GameObject[] towers;
@@ -19,6 +21,8 @@ public class TowerSpawner : MonoBehaviour
 
     public void SpawnTower()
     {
+        random = Random.Range(0, towerPrefabs.Count);   
+
         if (spotIndex >= towerSpot.Count)
         {
             Debug.Log("Full");
@@ -26,7 +30,7 @@ public class TowerSpawner : MonoBehaviour
         }
 
         Vector3 pos = towerSpot.GetSpotPoint(spotIndex);
-        Instantiate(towerPrefab, pos, Quaternion.identity);
+        Instantiate(towerPrefabs[random], pos, Quaternion.identity);
         spotIndex++;
 
         

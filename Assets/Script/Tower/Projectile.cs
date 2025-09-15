@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
     private Transform target;
     private float speed;
     private float damage;
+    Vector3 dir;
 
     public void Set(Transform target,  float damage, float speed = 5f)
     {
@@ -14,11 +15,11 @@ public class Projectile : MonoBehaviour
         this.damage = damage;
 
     }
-
+    
     private void Update()
     {
-        Vector3 dir;
-        if(target == null)
+        //Vector3 dir;
+        if(target == null|| !target.gameObject.activeInHierarchy)
         {
             gameObject.SetActive(false);
             return;
@@ -31,8 +32,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform != target) return;
-        collision.GetComponent<IDamagable>()?.OnDamage(damage, transform.position);
-        Debug.Log("Hit");
+        collision.GetComponent<IDamagable>()?.OnDamage(damage, transform.position);        
         gameObject.SetActive(false);   
     }
 }

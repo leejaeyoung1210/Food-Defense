@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4710455097866670198}
   - component: {fileID: 2026103534528420757}
   - component: {fileID: 4322873533677391738}
+  - component: {fileID: 8358860950589067052}
   m_Layer: 0
-  m_Name: Tower 1
+  m_Name: Tower Obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,6 +86,20 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 2a15302c79292e64eb8a3d22eb728f76, type: 2}
   attackIntaval: 1
   lastAttack: 0
+--- !u!114 &8358860950589067052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980373197184610223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f78058c47eb1d4395de25fdbbc682e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2225261508183696018, guid: a0daf42f9c8ad16488a857bb826aa961, type: 3}
+  poolSize: 5
 --- !u!1001 &8601881739172435238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,7 +110,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2327622273328065576, guid: b4bb64924375fd6409580b5cbbe6a495, type: 3}
       propertyPath: m_Name
-      value: Tower
+      value: ani
       objectReference: {fileID: 0}
     - target: {fileID: 2572581148165859375, guid: b4bb64924375fd6409580b5cbbe6a495, type: 3}
       propertyPath: m_Enabled

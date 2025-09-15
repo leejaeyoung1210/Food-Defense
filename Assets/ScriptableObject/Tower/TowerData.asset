@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9be3897082b924f986a51ac0879332, type: 3}
   m_Name: TowerData
   m_EditorClassIdentifier: 
+  towerType: 1
   range: 1
-  MaxHp: 0
-  shootInterval: 2
-  shootSpeed: 2
+  MaxHp: 150
+  shootInterval: 0.85
   damage: 1

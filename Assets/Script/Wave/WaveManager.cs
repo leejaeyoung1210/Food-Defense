@@ -17,6 +17,7 @@ public class WaveManager : MonoBehaviour
     {
         for (int i = 0; i < wave.waves.Count; i++)
         {
+            Debug.Log($"{wave.waves[i].waveNumber} ½ÃÀÛ");
             yield return StartCoroutine(OnWave(wave.waves[i]));
             currentWave++;
             yield return new WaitForSeconds(1f);

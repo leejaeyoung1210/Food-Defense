@@ -26,7 +26,13 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        Vector2 oldpos = transform.position;    
         transform.position = Vector3.MoveTowards(transform.position, targetposition, enemySpeed * Time.deltaTime);
+
+        float xscale = transform.position.x - oldpos.x; 
+
+        transform.localScale = new Vector3(Mathf.Sign(xscale), 1, 1);
+
 
         float distanceToTarget = Vector3.Distance(transform.position, targetposition);  
 
@@ -36,6 +42,7 @@ public class Enemy : MonoBehaviour
             {
                 currentPoint = 0;
             }
+            
             targetposition = currentPath.GetWayPoint(currentPoint);
             currentPoint++;
         }

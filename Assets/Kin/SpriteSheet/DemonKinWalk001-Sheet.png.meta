@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -137,10 +137,10 @@ TextureImporter:
       name: DemonKinWalk001-Sheet_0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 47
-        width: 41
-        height: 50
+        x: 42
+        y: 48
+        width: 39
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +159,10 @@ TextureImporter:
       name: DemonKinWalk001-Sheet_1
       rect:
         serializedVersion: 2
-        x: 169
-        y: 47
-        width: 41
-        height: 49
+        x: 170
+        y: 48
+        width: 39
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: DemonKinWalk001-Sheet_2
       rect:
         serializedVersion: 2
-        x: 297
-        y: 47
-        width: 41
-        height: 50
+        x: 298
+        y: 48
+        width: 39
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: DemonKinWalk001-Sheet_3
       rect:
         serializedVersion: 2
-        x: 425
-        y: 47
-        width: 41
-        height: 50
+        x: 426
+        y: 48
+        width: 39
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: DemonKinWalk001-Sheet_4
       rect:
         serializedVersion: 2
-        x: 553
-        y: 47
-        width: 41
-        height: 50
+        x: 554
+        y: 48
+        width: 39
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: DemonKinWalk001-Sheet_5
       rect:
         serializedVersion: 2
-        x: 681
-        y: 47
-        width: 41
-        height: 49
+        x: 682
+        y: 48
+        width: 39
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,10 +269,10 @@ TextureImporter:
       name: DemonKinWalk001-Sheet_6
       rect:
         serializedVersion: 2
-        x: 809
-        y: 47
-        width: 41
-        height: 50
+        x: 810
+        y: 48
+        width: 39
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,10 +291,10 @@ TextureImporter:
       name: DemonKinWalk001-Sheet_7
       rect:
         serializedVersion: 2
-        x: 937
-        y: 47
-        width: 41
-        height: 50
+        x: 938
+        y: 48
+        width: 39
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c7300df87f88f8443a803ee96b22ab4d
     internalID: 0
     vertices: []
     indices: 

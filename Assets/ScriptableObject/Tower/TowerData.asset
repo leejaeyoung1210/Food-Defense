@@ -16,4 +16,4 @@ MonoBehaviour:
   MaxHp: 0
   shootInterval: 2
   shootSpeed: 2
-  damage: 20
+  damage: 1

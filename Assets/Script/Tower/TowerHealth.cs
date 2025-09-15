@@ -2,36 +2,34 @@ using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
-public class EnemyHealth : Living
+public class TowerHealth : Living
 {
-    public EnemyData data;
+    public TowerData data;
     public Slider healthSlider;
     //public Enemy enemy;
 
-    public static event System.Action<GameObject> OnAnyEnemyRemoved;
+    //public static event System.Action<GameObject> OnAnyEnRemoved;
 
     protected override void OnEnable()
     {
-        MaxHealth = data.MaxHp;        
+        MaxHealth = data.MaxHp;
         base.OnEnable();
         healthSlider = GetComponentInChildren<Slider>(true);
-        healthSlider.value = health/MaxHealth;
-        healthSlider.gameObject.SetActive(false);   
+        healthSlider.value = health / MaxHealth;
+        healthSlider.gameObject.SetActive(false);
     }
-  
+
 
     public override void OnDamage(float damage, Vector2 hitPoint)
     {
         healthSlider.gameObject.SetActive(true);
         base.OnDamage(damage, hitPoint);
-        healthSlider.value = health/MaxHealth;
+        healthSlider.value = health / MaxHealth;
     }
 
     protected override void Die()
     {
-        base.Die();
-        WaveManager.enemyTotalCount--;
-        Define.Gold += 10;
-        OnAnyEnemyRemoved?.Invoke(gameObject);
-    }    
+        base.Die();        
+        //OnAnyEnemyRemoved?.Invoke(gameObject);
+    }
 }

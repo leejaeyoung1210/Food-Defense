@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7101034781887371894}
   - component: {fileID: 963556305423547333}
   - component: {fileID: 4154219950125094878}
+  - component: {fileID: 4927800251023269996}
   m_Layer: 0
   m_Name: Kin
   m_TagString: Enemy
@@ -105,9 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98184fefc8555040af39c377a9ca077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: a5890b1e09328c040b39425cb6d3e8fd, type: 2}
   enemySpeed: 1
   currentPath: {fileID: 0}
-  data: {fileID: 11400000, guid: a5890b1e09328c040b39425cb6d3e8fd, type: 2}
+  attackIntaval: 1
+  lastAttack: 0
 --- !u!58 &7876829490586804211
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -186,7 +189,6 @@ MonoBehaviour:
   MaxHealth: 100
   data: {fileID: 11400000, guid: a5890b1e09328c040b39425cb6d3e8fd, type: 2}
   healthSlider: {fileID: 2677707503997064352}
-  enemy: {fileID: 7433043745237371340}
 --- !u!95 &4154219950125094878
 Animator:
   serializedVersion: 7
@@ -209,6 +211,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &4927800251023269996
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7674835996735136886}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.3, y: 0.5}
+  m_Direction: 0
 --- !u!1001 &7226423497683942918
 PrefabInstance:
   m_ObjectHideFlags: 0

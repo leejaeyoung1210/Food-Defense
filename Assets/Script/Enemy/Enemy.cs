@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         targetposition = currentPath.GetWayPoint(currentPoint);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Tower"))
         {

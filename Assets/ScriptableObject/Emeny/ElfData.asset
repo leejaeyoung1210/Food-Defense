@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 1
   pre: {fileID: 7119575756913525421, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
-  range: 1
+  range: 3
   MaxHp: 220
   attackInterval: 0
   attackSpeed: 0

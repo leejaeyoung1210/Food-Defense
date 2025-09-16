@@ -30,6 +30,7 @@ public class TowerHealth : Living
     protected override void Die()
     {
         base.Die();        
+        Destroy(gameObject);  
         //OnAnyEnemyRemoved?.Invoke(gameObject);
     }
 }

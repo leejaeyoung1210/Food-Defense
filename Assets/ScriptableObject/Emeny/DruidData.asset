@@ -16,7 +16,7 @@ MonoBehaviour:
   pre: {fileID: 5515652077736760142, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
   range: 1
   MaxHp: 200
-  attackInterval: 0
+  attackInterval: 2
   attackSpeed: 0
   damage: 10
   moveSpeed: 2

@@ -86,11 +86,12 @@ public class Enemy : MonoBehaviour
                 other.GetComponent<TowerHealth>().OnDamage(data.damage, transform.position);        
                 break;
             case EnemyType.Archer:
+                Debug.Log("Archer Attack");
                 Shot(other);
                 break;
             case EnemyType.Wizard:
-                Debug.Log("Ranged Attack");
-                //Shot(other);
+                Debug.Log("wizard Attack");
+                MagicShot(other);
                 break;
         }
     }
@@ -103,6 +104,17 @@ public class Enemy : MonoBehaviour
 
         Projectile projectile = arrow.GetComponent<Projectile>();
         projectile.Set(target.transform, data.damage);
+    }
+
+    private void MagicShot(GameObject target)
+    {
+        Debug.Log("Fire");
+        GameObject ball = pool.GetPoolobject();
+        ball.transform.position = transform.position;
+        ball.SetActive(true);
+
+        MagicProjectile magicprojectile = ball.GetComponent<MagicProjectile>();
+        magicprojectile.Set(target.transform, data.damage);
     }
 
 

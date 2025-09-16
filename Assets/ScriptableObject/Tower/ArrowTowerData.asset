@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ArrowTowerData
   m_EditorClassIdentifier: 
   towerType: 1
-  range: 2
+  range: 1
   MaxHp: 150
   shootInterval: 0.95
   damage: 18

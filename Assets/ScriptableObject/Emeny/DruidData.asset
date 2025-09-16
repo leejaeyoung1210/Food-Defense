@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cc92f8b7632454ea3184c277c79293, type: 3}
   m_Name: DruidData
   m_EditorClassIdentifier: 
+  enemyType: 2
   pre: {fileID: 5515652077736760142, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
-  range: 8
+  range: 1
   MaxHp: 200
   attackInterval: 0
   attackSpeed: 0
-  damage: 0
+  damage: 10
   moveSpeed: 2

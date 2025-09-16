@@ -112,13 +112,13 @@ public class Tower : MonoBehaviour
         projectile.Set(target.transform,data.damage); 
 
 
-    }   
-
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, data.range * transform.lossyScale.x);
     }
+
+
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireSphere(transform.position, data.range * transform.lossyScale.x);
+    //}
 
 
 }

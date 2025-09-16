@@ -10,21 +10,11 @@ public class WaveManager : MonoBehaviour
     public WaveSet wave;
     public EnemySpawner enemySpawner;
 
-    private bool IsWaveStop = false;
-    //public int currentWave { get; private set; } = 0;
-
+   
     public static int enemyTotalCount = 0;
 
     void Start() => StartCoroutine(WaveSet());
 
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            IsWaveStop = true;
-        }
-    }
 
 
     IEnumerator WaveSet() // 웨이브 단계
@@ -43,18 +33,10 @@ public class WaveManager : MonoBehaviour
         float timer = wave.waveTime;
         foreach (var slot in wave.slots)
         {
-            if (IsWaveStop)
-            {
-                Debug.Log("스페1");
-                break;
-            }
+           
             for (int i = 0; i < slot.count; i++)
             {
-                if (IsWaveStop)
-                {
-                    Debug.Log("스페1");
-                    break;
-                }
+             
                 var enemy = slot.enemy;
                 if (enemy != null)
                 {
@@ -68,12 +50,7 @@ public class WaveManager : MonoBehaviour
 
         while (true)
         {
-            if (IsWaveStop)
-            {
-                Debug.Log("스페3");
-                enemyTotalCount = 0;
-                yield break;
-            }
+          
             timer -= Time.deltaTime;
             if (enemyTotalCount <= 0)
             {

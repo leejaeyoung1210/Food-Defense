@@ -4,7 +4,7 @@ public enum EnemyType
 {
     Warrior,
     Archer,
-    Wizard
+    Wizard,
 }
 
 

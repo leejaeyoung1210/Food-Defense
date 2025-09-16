@@ -82,7 +82,8 @@ public class Tower : MonoBehaviour
             switch (data.towerType)
             {
                 case TowerType.Warrior:
-                    //타겟한테 애니메이션 당하느것도 제작 필요?
+                    Debug.Log("Tower Attack");
+                   
                     target.OnDamage(data.damage, transform.position);
                     break;
                 case TowerType.Arrow:

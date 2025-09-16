@@ -20,12 +20,15 @@ public class Enemy : MonoBehaviour
 
     private ObjectPooler pool;
 
+    private Animator anim;  
+
 
     private void Awake()
     {
         enemyRange = GetComponent<CircleCollider2D>();
         currentPath = GameObject.FindWithTag("Spawn").GetComponent<WayPoint>();
         pool = GetComponent<ObjectPooler>();
+        anim = GetComponent<Animator>();    
     }
 
     private void Start()
@@ -35,7 +38,6 @@ public class Enemy : MonoBehaviour
     }
     private void OnEnable()
     {
-
         currentPoint = 0;
         //enemySpeed = data.moveSpeed;    
         targetposition = currentPath.GetWayPoint(currentPoint);
@@ -79,7 +81,8 @@ public class Enemy : MonoBehaviour
 
     private void TypeAttack(GameObject other)
     {
-        switch(data.enemyType)
+        anim.SetTrigger("Attack");
+        switch (data.enemyType)
         {            
             case EnemyType.Warrior:
                 Debug.Log("Melee Attack");  

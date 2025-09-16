@@ -7,9 +7,15 @@ public class EnemyHealth : Living
     public EnemyData data;
     public Slider healthSlider;
     //public Enemy enemy;
+    private Animator anim;
 
     public static event System.Action<GameObject> OnAnyEnemyRemoved;
 
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();   
+    
+    }
     protected override void OnEnable()
     {
         MaxHealth = data.MaxHp;        
@@ -22,6 +28,7 @@ public class EnemyHealth : Living
 
     public override void OnDamage(float damage, Vector2 hitPoint)
     {
+        anim.SetTrigger("Hit");
         healthSlider.gameObject.SetActive(true);
         base.OnDamage(damage, hitPoint);
         healthSlider.value = health/MaxHealth;
@@ -29,9 +36,11 @@ public class EnemyHealth : Living
 
     protected override void Die()
     {
+        anim.SetTrigger("Die");         
         base.Die();
         WaveManager.enemyTotalCount--;
         Define.Gold += 10;
         OnAnyEnemyRemoved?.Invoke(gameObject);
     }    
+    
 }

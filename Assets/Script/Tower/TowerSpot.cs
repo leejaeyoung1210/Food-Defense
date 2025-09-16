@@ -2,11 +2,22 @@ using UnityEngine;
 
 public class TowerSpot : MonoBehaviour
 {
-    [SerializeField]
-    private Transform[] spotPoints;
+    
+    public Transform[] spotPoints;
+    public bool[] isSpawning;
+
+    public bool isOn = false;
 
     public int Count => spotPoints?.Length ?? 0;
 
+    private void Awake()
+    {
+        isSpawning = new bool[spotPoints.Length];
+        for(int i = 0; i < isSpawning.Length; i++)
+        {
+            isSpawning[i] = false;
+        }   
+    }   
     public Vector3 GetSpotPoint(int count)
     {
         return spotPoints[count].transform.position;

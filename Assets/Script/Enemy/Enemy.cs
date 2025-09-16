@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     private ObjectPooler pool;
 
     private Animator anim;  
+    private EnemyHealth enemyHealth => GetComponent<EnemyHealth>();
 
 
     private void Awake()
@@ -58,6 +59,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (enemyHealth.IsDead) return; 
+
         Vector2 oldpos = transform.position;
         transform.position = Vector3.MoveTowards(transform.position, targetposition, enemySpeed * Time.deltaTime);
 

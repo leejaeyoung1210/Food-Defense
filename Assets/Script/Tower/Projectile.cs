@@ -5,9 +5,15 @@ public class Projectile : MonoBehaviour
 {
     private Transform target;
     private float speed;
-    private float damage;   
-    
+    private float damage;
+    private Rigidbody2D rb;
+
     Vector3 dir;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }       
 
     public void Set(Transform target, float damage, float speed = 3f)
     {
@@ -27,6 +33,10 @@ public class Projectile : MonoBehaviour
         }
         dir = (target.position - transform.position).normalized;
         transform.position += dir * (speed * Time.deltaTime);
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        rb.MoveRotation(angle);
+
+
     }
 
 

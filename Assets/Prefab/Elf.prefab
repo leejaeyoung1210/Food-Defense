@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2376679433365602172}
   - component: {fileID: 4946361957120480650}
   - component: {fileID: 4999236090100960563}
-  - component: {fileID: 8139827098947171726}
   - component: {fileID: 8730638412382541463}
   - component: {fileID: 3000079995730434153}
+  - component: {fileID: 6073556276427238887}
   m_Layer: 0
   m_Name: Elf
   m_TagString: Enemy
@@ -190,28 +190,6 @@ MonoBehaviour:
   MaxHealth: 100
   data: {fileID: 11400000, guid: 91ddf29448946ac469437a58088208da, type: 2}
   healthSlider: {fileID: 6568656537510628547}
---- !u!95 &8139827098947171726
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7119575756913525421}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 581f4d5a707b8a944b34fd94d1d983c6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!70 &8730638412382541463
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -263,6 +241,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 94600125948455441, guid: e479a29c699891d44ad843cc3270b726, type: 3}
   poolSize: 3
+--- !u!95 &6073556276427238887
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119575756913525421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 581f4d5a707b8a944b34fd94d1d983c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1893982972156470885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,11 +273,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1196727423353272, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1196727423353272, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663465017265876208, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
+      propertyPath: m_Color.g
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663465017265876208, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6467062434339531554, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
       propertyPath: m_Name

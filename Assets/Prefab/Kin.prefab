@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: a5890b1e09328c040b39425cb6d3e8fd, type: 2}
-  enemySpeed: 1
+  enemySpeed: 0
   currentPath: {fileID: 0}
   attackIntaval: 1
   lastAttack: 0
@@ -258,11 +258,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1196727423353272, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1196727423353272, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663465017265876208, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
+      propertyPath: m_Color.g
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663465017265876208, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6467062434339531554, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
       propertyPath: m_Name

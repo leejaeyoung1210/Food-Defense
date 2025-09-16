@@ -18,7 +18,7 @@ public class TowerSpot : MonoBehaviour
             isSpawning[i] = false;
         }   
     }   
-    public Vector3 GetSpotPoint(int count)
+    public Vector2 GetSpotPoint(int count)
     {
         return spotPoints[count].transform.position;
     }

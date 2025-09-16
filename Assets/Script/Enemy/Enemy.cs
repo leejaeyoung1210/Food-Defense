@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        enemySpeed = data.moveSpeed;    
         enemyRange.radius = data.range;
         attackIntaval = data.attackInterval;
     }

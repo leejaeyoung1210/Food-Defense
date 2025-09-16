@@ -3163,7 +3163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2036962582
 Transform:
   m_ObjectHideFlags: 0
@@ -3259,11 +3259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4469730963222748885, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4469730963222748885, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5515652077736760142, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_Name
@@ -3271,7 +3271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5515652077736760142, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3696533244026951926, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
@@ -3373,11 +3373,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1895038048873228253, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1895038048873228253, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4521121617204054677, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
       propertyPath: m_Color.b
@@ -3397,7 +3397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7119575756913525421, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8139827098947171726, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
       propertyPath: m_Controller

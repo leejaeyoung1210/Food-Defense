@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
+using System.Collections;   
 
 public class EnemyHealth : Living
 {
@@ -36,11 +37,19 @@ public class EnemyHealth : Living
 
     protected override void Die()
     {
-        anim.SetTrigger("Die");         
-        base.Die();
+        anim.SetTrigger("Die");        
+        base.Die();      
+        StartCoroutine(Death());
+        
+    }
+
+    IEnumerator Death()
+    {
+        Debug.Log("Enemy Dead");
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
         WaveManager.enemyTotalCount--;
         Define.Gold += 10;
         OnAnyEnemyRemoved?.Invoke(gameObject);
-    }    
-    
+    }
+
 }

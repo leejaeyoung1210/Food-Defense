@@ -6,9 +6,14 @@ public class TowerHealth : Living
 {
     public TowerData data;
     public Slider healthSlider;
-    //public Enemy enemy;
 
-    //public static event System.Action<GameObject> OnAnyEnRemoved;
+    private Spot mySpot;
+    
+
+    public void SetSpot(Spot spot)
+    {
+        mySpot = spot;
+    }
 
     protected override void OnEnable()
     {
@@ -18,7 +23,7 @@ public class TowerHealth : Living
         healthSlider.value = health / MaxHealth;
         healthSlider.gameObject.SetActive(false);
     }
-
+     
 
     public override void OnDamage(float damage, Vector2 hitPoint)
     {
@@ -29,8 +34,11 @@ public class TowerHealth : Living
 
     protected override void Die()
     {
-        base.Die();        
-        Destroy(gameObject);  
-        //OnAnyEnemyRemoved?.Invoke(gameObject);
+        if (mySpot == null) return;
+
+        base.Die();      
+
+        mySpot.isSpawning = false;
+        Destroy(gameObject);        
     }
 }

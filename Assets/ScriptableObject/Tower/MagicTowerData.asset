@@ -16,4 +16,4 @@ MonoBehaviour:
   range: 1
   MaxHp: 100
   shootInterval: 0.95
-  damage: 19
+  damage: 20

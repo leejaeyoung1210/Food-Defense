@@ -2300,24 +2300,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotPoints:
-  - {fileID: 980074906}
-  - {fileID: 1084397438}
-  - {fileID: 360746622}
-  - {fileID: 1008249835}
-  - {fileID: 469706627}
-  - {fileID: 1921076429}
-  - {fileID: 513693486}
-  - {fileID: 82748379}
-  - {fileID: 1292141181}
-  - {fileID: 636040010}
-  - {fileID: 1998434021}
-  - {fileID: 305881870}
-  - {fileID: 685355793}
-  - {fileID: 34714509}
-  - {fileID: 880226698}
-  - {fileID: 1261473093}
-  isSpawning: 
-  isOn: 0
+  - point: {fileID: 980074906}
+    isSpawning: 0
+  - point: {fileID: 1084397438}
+    isSpawning: 0
+  - point: {fileID: 360746622}
+    isSpawning: 0
+  - point: {fileID: 1008249835}
+    isSpawning: 0
+  - point: {fileID: 469706627}
+    isSpawning: 0
+  - point: {fileID: 1921076429}
+    isSpawning: 0
+  - point: {fileID: 513693486}
+    isSpawning: 0
+  - point: {fileID: 82748379}
+    isSpawning: 0
+  - point: {fileID: 1292141181}
+    isSpawning: 0
+  - point: {fileID: 636040010}
+    isSpawning: 0
+  - point: {fileID: 1998434021}
+    isSpawning: 0
+  - point: {fileID: 305881870}
+    isSpawning: 0
+  - point: {fileID: 685355793}
+    isSpawning: 0
+  - point: {fileID: 34714509}
+    isSpawning: 0
+  - point: {fileID: 880226698}
+    isSpawning: 0
+  - point: {fileID: 1261473093}
+    isSpawning: 0
 --- !u!1 &1185387124
 GameObject:
   m_ObjectHideFlags: 0
@@ -3157,11 +3171,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4098487644595127235, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.47
+      value: -1.16
       objectReference: {fileID: 0}
     - target: {fileID: 4098487644595127235, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.87
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 4098487644595127235, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3197,11 +3211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4469730963222748885, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4469730963222748885, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5515652077736760142, guid: e678c10c55d39b648a8bc5b53a562932, type: 3}
       propertyPath: m_Name
@@ -3274,11 +3288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7227478643625885630, guid: b7c3b59d92548c844a34ffcb56c3f8d1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7227478643625885630, guid: b7c3b59d92548c844a34ffcb56c3f8d1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7433043745237371340, guid: b7c3b59d92548c844a34ffcb56c3f8d1, type: 3}
       propertyPath: enemySpeed
@@ -3307,11 +3321,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1895038048873228253, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1895038048873228253, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4521121617204054677, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
       propertyPath: m_Color.g
@@ -3465,11 +3479,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 841610483631550683, guid: 6ddfb32d369c10c4a96618fe940b25d3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 841610483631550683, guid: 6ddfb32d369c10c4a96618fe940b25d3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2588276355907366643, guid: 6ddfb32d369c10c4a96618fe940b25d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3514,6 +3528,10 @@ PrefabInstance:
     - target: {fileID: 2788652154698221789, guid: 6ddfb32d369c10c4a96618fe940b25d3, type: 3}
       propertyPath: m_Name
       value: ArrowTower Obj
+      objectReference: {fileID: 0}
+    - target: {fileID: 2788652154698221789, guid: 6ddfb32d369c10c4a96618fe940b25d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3412821962108689811, guid: 6ddfb32d369c10c4a96618fe940b25d3, type: 3}
       propertyPath: m_Color.b

@@ -32,12 +32,21 @@ public class MagicProjectile : MonoBehaviour
     {
         if (collision.transform != target) return;
 
+        if (target == null || !target.gameObject.activeInHierarchy)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
 
         var hit = Physics2D.OverlapCircleAll(transform.position, 5f);
         foreach (var h in hit)
         {
            if (h.CompareTag("Tower"))
-           {
+           {                
+                //if (collision.gameObject.activeInHierarchy == false) continue;
+                //if (collision.gameObject.GetComponent<IDamagable>() == null) continue;
+                //if (collision.gameObject.GetComponent<Living>().IsDead == true) continue;
+
                 h.GetComponent<IDamagable>()?.OnDamage(damage, transform.position);
            }
         }

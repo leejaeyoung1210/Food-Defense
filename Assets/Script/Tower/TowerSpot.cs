@@ -1,26 +1,22 @@
 using UnityEngine;
 
+[System.Serializable]
+public class Spot
+{
+    public Transform point;
+    [HideInInspector]
+    public bool isSpawning;
+}
+
 public class TowerSpot : MonoBehaviour
 {
-    
-    public Transform[] spotPoints;
-    public bool[] isSpawning;
-
-    public bool isOn = false;
+    public Spot[] spotPoints;
 
     public int Count => spotPoints?.Length ?? 0;
 
-    private void Awake()
+    public Transform GetSpotPoint(int count) // 
     {
-        isSpawning = new bool[spotPoints.Length];
-        for(int i = 0; i < isSpawning.Length; i++)
-        {
-            isSpawning[i] = false;
-        }   
-    }   
-    public Vector2 GetSpotPoint(int count)
-    {
-        return spotPoints[count].transform.position;
+        return spotPoints[count].point;
     }
 
     private void OnDrawGizmos()
@@ -28,7 +24,7 @@ public class TowerSpot : MonoBehaviour
         for (int i = 0; i < Count; i++)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(spotPoints[i].position, spotPoints[i].localScale);
+            Gizmos.DrawWireCube(spotPoints[i].point.position, spotPoints[i].point.localScale);
         }
     }
 }

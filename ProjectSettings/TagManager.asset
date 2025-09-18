@@ -16,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
+  - Spot
   - 
   - 
   - 
@@ -44,6 +44,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ' Units'
+    uniqueID: 115035859
+    locked: 0
+  - name: BackGround
+    uniqueID: 1130477013
     locked: 0
   m_RenderingLayers:
   - Default

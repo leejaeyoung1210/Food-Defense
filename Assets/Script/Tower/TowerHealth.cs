@@ -8,11 +8,18 @@ public class TowerHealth : Living
     public Slider healthSlider;
 
     private Spot mySpot;
-    
+
 
     public void SetSpot(Spot spot)
     {
         mySpot = spot;
+    }
+
+    public Spot GetSpot()
+    {
+        if (mySpot == null) return null;
+        
+        return mySpot;  
     }
 
     protected override void OnEnable()
@@ -23,7 +30,7 @@ public class TowerHealth : Living
         healthSlider.value = health / MaxHealth;
         healthSlider.gameObject.SetActive(false);
     }
-     
+
 
     public override void OnDamage(float damage, Vector2 hitPoint)
     {
@@ -36,9 +43,9 @@ public class TowerHealth : Living
     {
         if (mySpot == null) return;
 
-        base.Die();      
-
+        base.Die();
+        mySpot.tower = null;
         mySpot.isSpawning = false;
-        Destroy(gameObject);        
+        Destroy(gameObject);
     }
 }

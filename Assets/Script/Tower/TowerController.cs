@@ -19,6 +19,7 @@ public class TowerController : MonoBehaviour
     private TowerSpot prevOwner;
     private int prevIndex = -1;
 
+    private bool isSelected = false; // 선택된 상태인지    
 
 
     private void Update()
@@ -32,6 +33,8 @@ public class TowerController : MonoBehaviour
                 startTime = Time.time;
                 Began();
             }
+
+            if (!isSelected) return;
             if (touch.phase == TouchPhase.Moved)
             {
                 Dragging();
@@ -43,6 +46,7 @@ public class TowerController : MonoBehaviour
         }
         if (dir != Vector3.zero)
         {
+            isSelected = false; // 이동 시작하면 선택 해제
             transform.position = Vector3.MoveTowards(transform.position, endPos, speed * Time.deltaTime);
             if (Vector3.Distance(transform.position, endPos) < 0.001f)
             {
@@ -67,9 +71,16 @@ public class TowerController : MonoBehaviour
         }
         else if (hit.collider.gameObject == this.gameObject)// 어딘가 찍엇다 그럼 자신인지 검사 필요 
         {
+            isSelected = true;
             startPos = transform.position; //터치 시작 위치는 타워 위치    
             lr.positionCount = 1;
             lr.SetPosition(0, startPos);
+        }
+        else
+        {
+            isSelected = false;
+            lr.positionCount = 0; //라인클리어
+            return;
         }
     }
 

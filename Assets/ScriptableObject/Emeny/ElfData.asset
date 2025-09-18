@@ -15,8 +15,8 @@ MonoBehaviour:
   enemyType: 1
   pre: {fileID: 7119575756913525421, guid: 2f806b4401677134ba49cb1749eab6c9, type: 3}
   range: 3
-  MaxHp: 300
-  attackInterval: 1
+  MaxHp: 150
+  attackInterval: 2
   attackSpeed: 0
   damage: 10
   moveSpeed: 1

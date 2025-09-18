@@ -46,10 +46,12 @@ public class EnemyHealth : Living
     IEnumerator Death()
     {
         Debug.Log("Enemy Dead");
+        healthSlider.gameObject.SetActive(false);
         yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
         WaveManager.enemyTotalCount--;
-        Define.Gold += 10;
+        Define.gold += 20;
         OnAnyEnemyRemoved?.Invoke(gameObject);
+        Destroy(gameObject);    
     }
 
 }

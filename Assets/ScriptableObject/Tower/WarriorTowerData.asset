@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerType: 0
   range: 1
-  MaxHp: 10
-  shootInterval: 0.85
-  damage: 20
+  MaxHp: 100
+  shootInterval: 2
+  damage: 10

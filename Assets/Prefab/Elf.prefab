@@ -287,6 +287,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4104075510280060524, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 115035859
+      objectReference: {fileID: 0}
     - target: {fileID: 6467062434339531554, guid: c0d66390d0c30c44dafc77767c60951b, type: 3}
       propertyPath: m_Name
       value: 'Canvas '

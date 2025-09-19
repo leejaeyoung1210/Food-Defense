@@ -46,7 +46,7 @@ public class BackgroundFitter : MonoBehaviour
         float scaleY = worldH / spriteSize.y;
 
         float scale = (scaleMode == Mode.Fill) ? Mathf.Max(scaleX, scaleY) : Mathf.Min(scaleX, scaleY);
-        transform.localScale = new Vector3(scale, scale, 1f);
+        transform.localScale = new Vector3(scale ,scale, 1f);
 
         // 카메라 중심에 정렬
         transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, 0f);

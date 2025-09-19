@@ -42,6 +42,12 @@ public class UIManager : MonoBehaviour
     private void SpawnCostLoad()
     {
         spawnCostText.text = $"{Define.spawnCost}";
+        if(Define.spawnCost>Define.gold)
+        {
+            spawnCostText.color = Color.red;
+        }
+        else { spawnCostText.color = Color.yellow; }
+
     }
 
 

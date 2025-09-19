@@ -8,9 +8,6 @@ public class TowerSpawner : MonoBehaviour
     private TowerSpot towerSpot;
     private int randomType;
 
-    GameObject towerPrefab;
-
-    private TowerSpot towerSpottest;   // 선택
 
     private void Awake()
     {
@@ -25,8 +22,7 @@ public class TowerSpawner : MonoBehaviour
     public void SpawnTower()
     {
         randomType = Random.Range(0, towerPrefabs.Count);
-        //if (towerPrefab == null) { Debug.LogError("[TowerSpawner] towerPrefab 미할당", this); return; }
-        //if (towerSpottest == null) { Debug.LogError("[TowerSpawner] towerSpot 미할당", this); return; }
+
         if (Define.gold < Define.spawnCost)
         {
             Debug.Log("골드 부족");
@@ -34,21 +30,22 @@ public class TowerSpawner : MonoBehaviour
         }
         else
         {
-            Mathf.Max(0, Define.gold -= Define.spawnCost);
-
             foreach (var spot in towerSpot.spotPoints)
             {
                 if (spot.isSpawning == false)
                 {
+                    Mathf.Max(0, Define.gold -= Define.spawnCost);
                     Debug.Log("타워 생성");
                     var newtower = Instantiate(towerPrefabs[randomType], spot.point, Quaternion.identity);
-                    spot.isSpawning = true; // 자리 참 
+                    spot.isSpawning = true;
                     spot.tower = newtower; // 스폿이 타워 알고있게
-                    newtower.GetComponent<TowerHealth>().SetSpot(spot); // 타워가 자기 자리 알고있게
+                    newtower.GetComponent<TowerHealth>().SetSpot(spot); // 타워가 자기 자리 알고있게                    
                     Define.spawnCost += 1;
                     break;
                 }
             }
+            
+            return;
         }
     }
 }

@@ -1,5 +1,6 @@
 //using UnityEngine;
 //using UnityEngine.EventSystems;
+//using UnityEngine.Rendering;
 
 //public class TouchHandler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 //{
@@ -26,10 +27,19 @@
 
 //    public void OnPointerDown(PointerEventData eventData)
 //    {
+//        Ray ray = Camera.main.ScreenPointToRay(eventData.position);
+//        if (Physics.Raycast(ray, out RaycastHit hitInfo))
+//        {
+//            Debug.Log($"{hitInfo.collider.gameObject.name}");
+//            Debug.Log("찍힘");
 
-//        lr = eventData.pointerPressRaycast.gameObject.GetComponent<LineRenderer>();
+//        }
+
 //        holdStartTime = Time.time;
 //        isHolding = true;
+//        lr.positionCount = 0;
+//        lr.SetPosition(0,startPos);
+//        Debug.Log($"{eventData.pointerCurrentRaycast}선택됨");
 //    }
 //    public void OnDrag(PointerEventData eventData)
 //    {
@@ -50,6 +60,7 @@
 //                    Vector2 capped = startPos + dir * maxLineRange;
 //                    lr.SetPosition(1, capped);
 //                    //endPos = capped;
+//                    Debug.Log("그리는중");
 //                    return;
 //                }
 //                //endPos = eventData.position;
@@ -67,6 +78,7 @@
 //        if (holdDuration > 0.5f)   // 0.5초 이상 → 홀드로 간주
 //        {
 //            Debug.Log("홀드 완료 (길게 누름)");
+//            //if(eventData)
 
 //        }
 //        else

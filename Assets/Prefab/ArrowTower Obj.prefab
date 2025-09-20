@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2605797139843127114}
   - component: {fileID: 2258830082143199717}
   - component: {fileID: 3024329220408524967}
-  - component: {fileID: 7262044551318994721}
   m_Layer: 0
   m_Name: ArrowTower Obj
   m_TagString: Tower
@@ -262,19 +261,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &7262044551318994721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2788652154698221789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac39063458d3c53438e663df30b236b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lr: {fileID: 3024329220408524967}
 --- !u!1001 &840554839471305059
 PrefabInstance:
   m_ObjectHideFlags: 0

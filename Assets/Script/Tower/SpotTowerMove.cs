@@ -22,7 +22,7 @@ public class SpotTowerMove : MonoBehaviour
     //private GameObject tower;
     Spot current;
     Spot targetSpot;
-    private bool spawping;
+    private bool swaping;
 
     bool moving = false;
 
@@ -67,17 +67,31 @@ public class SpotTowerMove : MonoBehaviour
             {
                 current.tower.transform.position = Vector2.MoveTowards((Vector2)current.tower.transform.position, endPos, speed * Time.deltaTime);
 
+                if (swaping)
+                {
+                    targetSpot.tower.transform.position = Vector2.MoveTowards((Vector2)targetSpot.tower.transform.position, startPos, speed * Time.deltaTime);
+                    if (Vector2.Distance(current.tower.transform.position, endPos) < 0.001f&&
+                        Vector2.Distance(targetSpot.tower.transform.position, startPos) < 0.001f)
+                    {
+                        var temp = targetSpot.tower;   
+                        targetSpot.tower = current.tower;//타워정보 넘겨주고 
+                        current.tower = temp;
+
+                        ResetState();
+                        return;
+                    }
+
+
+                }
+
                 if (Vector2.Distance(current.tower.transform.position, endPos) < 0.001f)
                 {
                     current.isSpawning = false; //기존위치비우고
                     targetSpot.isSpawning = true;// 이동위치 활서오하
                     targetSpot.tower = current.tower;//타워정보 넘겨주고 
-                    current.tower = null; // 정보초기화 
+                    //current.tower = null; // 정보초기화 
 
-                    current = null; 
-                    targetSpot = null;
-                    isSelected = false;
-                    moving = false; 
+                    ResetState(); return;   
                 }
             }
         }
@@ -98,13 +112,13 @@ public class SpotTowerMove : MonoBehaviour
         }
 
 
-        if (hit.collider == collider2D&&!moving) // 어딘가 찍엇다 그럼 자신인지 검사 필요 
+        if (hit.collider == collider2D && !moving) // 어딘가 찍엇다 그럼 자신인지 검사 필요 
         {
             current = ownerSpot.FindAvailableSpot(hit.point); //그 위치 저장 
-            
+            startPos = current.point;
             isSelected = true;
             lr.positionCount = 1;
-            lr.SetPosition(0, current.point);            
+            lr.SetPosition(0, current.point);
         }
     }
 
@@ -116,7 +130,7 @@ public class SpotTowerMove : MonoBehaviour
             return;
         }
 
-        if (Time.time - startTime > tapThreshold&& isSelected) // 드래그로 판단되면 선 이어주고 아니면 탭으로 인식할거임
+        if (Time.time - startTime > tapThreshold && isSelected) // 드래그로 판단되면 선 이어주고 아니면 탭으로 인식할거임
         {
             Vector2 dragPos = Camera.main.ScreenToWorldPoint(touch.position);
 
@@ -142,42 +156,66 @@ public class SpotTowerMove : MonoBehaviour
         }
 
 
-        if (hit.collider == collider2D&& isSelected) // 어딘가 찍엇다 그럼 자신인지 검사 필요 
+        if (hit.collider == collider2D && isSelected) // 어딘가 찍엇다 그럼 자신인지 검사 필요 
         {
             //텝인지 검사 필요 
             targetSpot = ownerSpot.FindAvailableSpot(hit.point); //그 위치 저장 
             if (targetSpot == null)
-            {             
+            {
                 isSelected = false;
                 return;
             }
 
-            endPos = targetSpot.point;                        
+            if(targetSpot.point == current.point) // 이동하는거 막고나서 텝인지 검사하자.
+            { 
+                if(Time.time - startTime <= tapThreshold)
+                {
+                    OnenTab(targetSpot);
+                    return;
+                }
+                else
+                {
+                    Debug.Log("같은위치 드래그");
+                    isSelected = false;
+                    return;
+                }
+                
+            }
+
+            endPos = targetSpot.point;
 
             //드래그 이동시 
             if (targetSpot.isSpawning == false) //포탑 없는거 바로 이동 
-            {                
-                moving = true;   
+            {
+                moving = true;
             }
             else //타워가 있음        targetSpot          
             {
                 moving = true;
-                spawping =true;
+                swaping = true;
             }
-
-            
 
         }
 
 
     }
 
-    private void OnenTab(TowerSpot target) //UI 띄우기 타워에 캔버스 설정 (강화)
+    private void OnenTab(Spot target) //UI 띄우기 타워에 캔버스 설정 (강화)
     {
-        target.gameObject.GetComponent<Canvas>();
-        target.gameObject.SetActive(true);
+        Debug.Log($"터치함{target.tower}");
 
         return;
+    }
+
+    private void ResetState()
+    {
+        startPos = Vector2.zero;
+        endPos = Vector2.zero;
+        current = null;
+        targetSpot = null;
+        isSelected = false;
+        moving = false;
+        swaping =false;
     }
 }
 

@@ -17,11 +17,11 @@ public class TowerData
     public string Name { get; set; }
     public TowerType Type { get; set; }
     public int Level { get; set; }
+    public int? NextLv { get; set; }
     public bool Upgradeable { get; set; }
     public int UpgradeCost { get; set; }
     public int Hp { get; set; }
-    public int AttackPower { get; set; }
-    public float MoveSpeed { get; set; }
+    public int AttackPower { get; set; }    
     public float AttackSpeed { get; set; }
     public float Range { get; set; }
     
@@ -37,11 +37,7 @@ public class TowerData
 
     public string Icon { get; set; }
 
-    public override string ToString()
-    {
-        return $"{Id} / {Name} / {Type} / {Level} / {Upgradeable} / {UpgradeCost} / {Hp}";
-    }    
-
+    [CsvHelper.Configuration.Attributes.Ignore]
     public Sprite spriteIcon
     {
         get
@@ -59,8 +55,8 @@ public class TowerData
                 case TowerType.Magic:
                     spriteSheets = new[] { "Icon/magic1", "Icon/magic2", "Icon/magic3" };
                     break;
-                    default
-                     : return null ;    
+                    default:
+                     return null ;    
             }
             foreach (string sheet in spriteSheets)
             {
@@ -91,8 +87,7 @@ public class TowerTable : DataTable
         foreach (var tower in list)
         {
             if (!table.ContainsKey(tower.Id))
-            {
-                Debug.Log($" {tower.Id}, {tower.Name}");
+            {               
                 table.Add(tower.Id, tower);
             }
             else

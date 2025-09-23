@@ -31,9 +31,9 @@ public class DataTableManager
         waveTable.Load(DataTableIds.Wave);
         tables.Add(DataTableIds.Wave, waveTable);
 
-        //var towerTable = new TowerTable();
-        //towerTable.Load(DataTableIds.Tower);
-        //tables.Add(DataTableIds.Tower, towerTable);
+        var towerTable = new TowerTable();
+        towerTable.Load(DataTableIds.Tower);
+        tables.Add(DataTableIds.Tower, towerTable);
     }
 
     public static EnemyTable EnemyTableData

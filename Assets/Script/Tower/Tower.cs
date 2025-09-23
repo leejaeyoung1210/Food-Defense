@@ -6,7 +6,7 @@ public class Tower : MonoBehaviour
 {
     public TowerData data;
     private CircleCollider2D towerRange;
-    
+    private SpriteRenderer towerSptrite;
 
     private ObjectPooler pool;  
 
@@ -18,16 +18,24 @@ public class Tower : MonoBehaviour
     private void Awake()
     {
         towerRange = GetComponent<CircleCollider2D>();
-        pool = GetComponent<ObjectPooler>();    
+        pool = GetComponent<ObjectPooler>();
+        towerSptrite = GetComponentInChildren<SpriteRenderer>();
     }
 
     public void Init(TowerData towerData)
     {
         data = towerData;
+        if(towerData.spriteIcon ==null)
+        {
+            Debug.Log($"{towerData.Name},{towerData.Icon}");
+        }
+        towerSptrite.sprite = towerData.spriteIcon;
         towerRange.radius = data.Range;
         attackIntaval = data.AttackSpeed;
         var hp = GetComponent<TowerHealth>();
         hp.AddData(data.Hp);
+        Debug.Log($"{towerData.Name},{towerData.Type},{towerData.AttackPower}");
+
     }
 
     private void OnEnable()

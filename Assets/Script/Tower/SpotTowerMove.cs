@@ -18,7 +18,7 @@ public class SpotTowerMove : MonoBehaviour
     public TowerSpot ownerSpot;//                 
 
     private int spotLay;
-    private Collider2D collider2D;
+    private Collider2D col;
     //private GameObject tower;
     Spot current;
     Spot targetSpot;
@@ -30,7 +30,7 @@ public class SpotTowerMove : MonoBehaviour
 
     private void Awake()
     {
-        collider2D = GetComponent<Collider2D>();
+        col = GetComponent<Collider2D>();
         spotLay = LayerMask.GetMask("Spot");
     }
 
@@ -112,13 +112,17 @@ public class SpotTowerMove : MonoBehaviour
         }
 
 
-        if (hit.collider == collider2D && !moving) // 어딘가 찍엇다 그럼 자신인지 검사 필요 
+        if (hit.collider == col && !moving) // 어딘가 찍엇다 그럼 자신인지 검사 필요 
         {
             current = ownerSpot.FindAvailableSpot(hit.point); //그 위치 저장 
-            startPos = current.point;
-            isSelected = true;
-            lr.positionCount = 1;
-            lr.SetPosition(0, current.point);
+
+            if (current != null)
+            {
+                startPos = current.point;
+                isSelected = true;
+                lr.positionCount = 1;
+                lr.SetPosition(0, current.point);
+            }
         }
     }
 
@@ -156,7 +160,7 @@ public class SpotTowerMove : MonoBehaviour
         }
 
 
-        if (hit.collider == collider2D && isSelected) // 어딘가 찍엇다 그럼 자신인지 검사 필요 
+        if (hit.collider == col && isSelected) // 어딘가 찍엇다 그럼 자신인지 검사 필요 
         {
             //텝인지 검사 필요 
             targetSpot = ownerSpot.FindAvailableSpot(hit.point); //그 위치 저장 

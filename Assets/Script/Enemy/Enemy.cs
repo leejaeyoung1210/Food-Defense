@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public EnemyData data;
     public float enemySpeed = 1f;
 
-    private Vector3 targetposition;
+    private Vector2 targetposition;
 
     public WayPoint currentPath;
     private int currentPoint;
@@ -30,14 +30,18 @@ public class Enemy : MonoBehaviour
         currentPath = GameObject.FindWithTag("Spawn").GetComponent<WayPoint>();
         pool = GetComponent<ObjectPooler>();
         anim = GetComponent<Animator>();    
+    }   
+
+    public void Init(EnemyData enemyData)
+    {
+        data = enemyData;
+        enemySpeed = data.MoveSpeed;
+        enemyRange.radius = data.Range;
+        attackIntaval = data.AttackSpeed;
+        var hp = GetComponent<EnemyHealth>();
+        hp.AddData(data.Hp);
     }
 
-    private void Start()
-    {
-        enemySpeed = data.moveSpeed;    
-        enemyRange.radius = data.range;
-        attackIntaval = data.attackInterval;
-    }
     private void OnEnable()
     {
         currentPoint = 0;
@@ -86,17 +90,17 @@ public class Enemy : MonoBehaviour
     private void TypeAttack(GameObject other)
     {
         anim.SetTrigger("Attack");
-        switch (data.enemyType)
+        switch (data.Type)
         {            
-            case EnemyType.Warrior:
+            case EnemyTypes.Knight:
                 Debug.Log("Melee Attack");  
-                other.GetComponent<TowerHealth>().OnDamage(data.damage, transform.position);        
+                other.GetComponent<TowerHealth>().OnDamage(data.AttackPower, transform.position);        
                 break;
-            case EnemyType.Archer:
+            case EnemyTypes.Archer:
                 Debug.Log("Archer Attack");
                 Shot(other);
                 break;
-            case EnemyType.Wizard:
+            case EnemyTypes.Wizard:
                 Debug.Log("wizard Attack");
                 MagicShot(other);
                 break;
@@ -105,12 +109,12 @@ public class Enemy : MonoBehaviour
     private void Shot(GameObject target)
     {
         Debug.Log("Shot");
-        GameObject arrow = pool.GetPoolobject();
+        GameObject arrow = pool.GetPoolobject(); 
         arrow.transform.position = transform.position;
         arrow.SetActive(true);
 
         Projectile projectile = arrow.GetComponent<Projectile>();
-        projectile.Set(target.transform, data.damage);
+        projectile.Set(target.transform, data.AttackPower);
     }
 
     private void MagicShot(GameObject target)
@@ -121,7 +125,7 @@ public class Enemy : MonoBehaviour
         ball.SetActive(true);
 
         MagicProjectile magicprojectile = ball.GetComponent<MagicProjectile>();
-        magicprojectile.Set(target.transform, data.damage);
+        magicprojectile.Set(target.transform, data.AttackPower);
     }
 
 

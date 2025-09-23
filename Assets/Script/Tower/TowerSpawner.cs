@@ -1,65 +1,79 @@
-using Unity.VisualScripting;
-using UnityEngine;
-using System.Collections.Generic;
+//using Unity.VisualScripting;
+//using UnityEngine;
+//using System.Collections.Generic;
 
-public class TowerSpawner : MonoBehaviour
-{
-    public List<GameObject> towerPrefabs;
-    public TowerSpot towerSpot;
-    private int randomType;   
+//public class TowerSpawner : MonoBehaviour
+//{
+//    //public List<GameObject> towerPrefabs;
+//    public TowerSpot towerSpot;
 
-    //private void Awake()
-    //{
-    //    towerSpot = GameObject.FindWithTag("Spot").GetComponent<TowerSpot>();
-    //}
+//    public void GoldCheat()
+//    {
+//        Define.gold += 100;
+//    }
 
-    public void GoldCheat()
-    {
-        Define.gold += 100;
-    }
+//    public void SpawnTower()
+//    {
+        
+//        if (Define.gold < Define.spawnCost)
+//        {
+//            Debug.Log("골드 부족");
+//            return;
+//        }
 
-    public void SpawnTower()
-    {
-        randomType = Random.Range(0, towerPrefabs.Count);
+//        List<TowerData> towerList = new List<TowerData>(DataTableManager.TowerTableData.GetAll());
+//        if (towerList.Count == 0)
+//        {
+//            Debug.Log("비어있음");
+//            return;
+//        }
 
-        if (Define.gold < Define.spawnCost)
-        {
-            Debug.Log("골드 부족");
-            return;
-        }
-        else
-        {
-            //foreach (var spot in towerSpot.spotPoints)
-            //{
-            //    if (spot.isSpawning == false)
-            //    {
-            //        Mathf.Max(0, Define.gold -= Define.spawnCost);
-            //        Debug.Log("타워 생성");
-            //        var newtower = Instantiate(towerPrefabs[randomType], spot.point, Quaternion.identity);
-            //        spot.isSpawning = true;
-            //        Debug.Log(newtower.name);
-            //        spot.tower = newtower; // 스폿이 타워 알고있게
-            //        newtower.GetComponent<TowerHealth>().SetSpot(spot); // 타워가 자기 자리 알고있게                    
-            //        Define.spawnCost += 1;
-            //        break;
-            //    }
-            //}
+//        float totalWeight = 0f;
+//        foreach (var tower in towerList) //돌면서 다 넣어주고 
+//        {
+//            float w = Mathf.Max(0, tower.Summonprobability);
+//            totalWeight += w;
+//        }
 
-            for (int i = 0; i < towerSpot.spotPoints.Count; i++)
-            {
-                if (towerSpot.spotPoints[i].isSpawning == false)
-                {                   
-                    Define.gold = Mathf.Max(0, Define.gold -= Define.spawnCost);                    
-                    GameObject newtower = Instantiate(towerPrefabs[randomType], towerSpot.spotPoints[i].point, Quaternion.identity);
-                    towerSpot.spotPoints[i].isSpawning = true;                    
-                    towerSpot.spotPoints[i].tower = newtower;                    
-                    newtower.GetComponent<TowerHealth>().SetSpot(towerSpot.spotPoints[i]); // 타워가 자기 자리 알고있게                    
-                    Define.spawnCost += 1;
-                    break;
-                }
-            }
+//        TowerData randomTower = null;
+//        if (totalWeight <= 0f)
+//        {
+//            randomTower = towerList[Random.Range(0, towerList.Count)];
+//        }
+//        else
+//        {
+         
+//            float r = Random.Range(0f, totalWeight);
+//            float acc = 0f;
+//            foreach (var t in towerList)
+//            {
+//                acc += Mathf.Max(0f, t.Summonprobability);
+//                if (r <= acc)
+//                {
+//                    randomTower = t;
+//                    break;
+//                }
+//            }
+//            // 부동소수점 경계 보호
+//            if (randomTower == null) randomTower = towerList[towerList.Count - 1];
+//        }
 
-            return;
-        }
-    }
-}
+
+//        for (int i = 0; i < towerSpot.spotPoints.Count; i++)
+//        {
+//            if (towerSpot.spotPoints[i].isSpawning == false)
+//            {
+//                Define.gold = Mathf.Max(0, Define.gold -= Define.spawnCost);
+//                GameObject newtower = Instantiate(randomTower.prefab, towerSpot.spotPoints[i].point, Quaternion.identity);
+//                towerSpot.spotPoints[i].isSpawning = true;
+//                towerSpot.spotPoints[i].tower = newtower;
+//                newtower.GetComponent<TowerHealth>().SetSpot(towerSpot.spotPoints[i]); // 타워가 자기 자리 알고있게
+//                newtower.GetComponent<Tower>().Init(randomTower);                                                                                   
+//                Define.spawnCost += 1;
+//                break;
+//            }
+//        }
+
+//        return;
+//    }
+//}

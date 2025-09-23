@@ -21,10 +21,13 @@ public class Tower : MonoBehaviour
         pool = GetComponent<ObjectPooler>();    
     }
 
-    private void Start()
+    public void Init(TowerData towerData)
     {
-        towerRange.radius = data.range;
-        attackIntaval = data.shootInterval;
+        data = towerData;
+        towerRange.radius = data.Range;
+        attackIntaval = data.AttackSpeed;
+        var hp = GetComponent<TowerHealth>();
+        hp.AddData(data.Hp);
     }
 
     private void OnEnable()
@@ -76,12 +79,12 @@ public class Tower : MonoBehaviour
         var target = enemies[0].GetComponent<IDamagable>();
         if (target != null)
         {
-            switch (data.towerType)
+            switch (data.Type)
             {
                 case TowerType.Warrior:
                     Debug.Log("Tower Attack");
                    
-                    target.OnDamage(data.damage, transform.position);
+                    target.OnDamage(data.AttackPower, transform.position);
                     break;
                 case TowerType.Arrow:
                     Shot(targetGo);
@@ -92,7 +95,7 @@ public class Tower : MonoBehaviour
                         var t = enemies[i].GetComponent<IDamagable>();
                         if (t != null)
                         {
-                            t.OnDamage(data.damage, transform.position);
+                            t.OnDamage(data.AttackPower, transform.position);
                         }
                     }
                     break;
@@ -107,16 +110,8 @@ public class Tower : MonoBehaviour
         arrow.SetActive(true);
      
         Projectile projectile = arrow.GetComponent<Projectile>();   
-        projectile.Set(target.transform,data.damage); 
+        projectile.Set(target.transform,data.AttackPower); 
 
 
     }
-
-
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawWireSphere(transform.position, data.range * transform.lossyScale.x);
-    //}
-
-
 }

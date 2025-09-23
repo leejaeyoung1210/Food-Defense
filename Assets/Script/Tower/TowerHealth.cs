@@ -9,7 +9,6 @@ public class TowerHealth : Living
 
     private Spot mySpot;
 
-
     public void SetSpot(Spot spot)
     {
         mySpot = spot;
@@ -22,14 +21,23 @@ public class TowerHealth : Living
         return mySpot;  
     }
 
-    protected override void OnEnable()
+    public void AddData(int maxHp)
     {
-        MaxHealth = data.MaxHp;
-        base.OnEnable();
         healthSlider = GetComponentInChildren<Slider>(true);
+        MaxHealth = maxHp;
+        health = MaxHealth;
         healthSlider.value = health / MaxHealth;
         healthSlider.gameObject.SetActive(false);
     }
+
+    //protected override void OnEnable()
+    //{
+    //    MaxHealth = data.MaxHp;
+    //    base.OnEnable();
+    //    healthSlider = GetComponentInChildren<Slider>(true);
+    //    healthSlider.value = health / MaxHealth;
+    //    healthSlider.gameObject.SetActive(false);
+    //}
 
 
     public override void OnDamage(float damage, Vector2 hitPoint)

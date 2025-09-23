@@ -1,17 +1,37 @@
+using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public class EnemyTypePrefab
+{
+    public EnemyTypes type;
+    public GameObject prefab;
+}
 
 public class EnemySpawner : MonoBehaviour
 {
-    //private ObjectPooler pool;
-    private void Update()
-    {
+    public EnemyTypePrefab[] enemyPrefabs;
 
+    private Dictionary<EnemyTypes, GameObject> prefabs;
+
+    private void Awake()
+    {
+        prefabs = new Dictionary<EnemyTypes, GameObject>();
+        foreach(var entry in enemyPrefabs)
+        {
+            prefabs[entry.type] = entry.prefab;
+        }
     }
 
-    public void Spawn(EnemyData e, Vector2 towerpos)
+    public void Spawn(EnemyData enemyData, Vector2 towerpos)
     {
-        GameObject enemy = Instantiate(e.pre, towerpos, Quaternion.identity);
-        //enemy.SetActive(true);
+        if(!prefabs.TryGetValue(enemyData.Type,out var prefab))
+        {
+            return;
+        }
+
+        var enemy = Instantiate(prefab, towerpos, Quaternion.identity);
+        enemy.GetComponent<Enemy>().Init(enemyData);                
     }
 
 }

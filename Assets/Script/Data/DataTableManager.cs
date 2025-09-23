@@ -1,0 +1,79 @@
+using UnityEngine;
+using System.Collections.Generic;
+using TMPro;
+using System.Threading;
+
+public class DataTableManager
+{
+    private static readonly Dictionary<string, DataTable> tables = new Dictionary<string, DataTable>();
+
+    static DataTableManager()
+    {
+        Init();
+    }
+
+    private static void Init()
+    {
+        var enemyTable = new EnemyTable();
+        enemyTable.Load(DataTableIds.Enemy);
+        tables.Add(DataTableIds.Enemy, enemyTable);
+        
+
+        var waveSlotTable = new WaveSlotTable();
+        waveSlotTable.enemyTable = enemyTable;
+        waveSlotTable.Load(DataTableIds.Slot);
+        tables.Add(DataTableIds.Slot, waveSlotTable);
+     
+
+
+        var waveTable = new WaveTable();
+        waveTable.slotTable = waveSlotTable;
+        waveTable.Load(DataTableIds.Wave);
+        tables.Add(DataTableIds.Wave, waveTable);
+
+        //var towerTable = new TowerTable();
+        //towerTable.Load(DataTableIds.Tower);
+        //tables.Add(DataTableIds.Tower, towerTable);
+    }
+
+    public static EnemyTable EnemyTableData
+    {
+        get
+        {
+            return Get<EnemyTable>(DataTableIds.Enemy);
+        }
+    }
+
+    public static WaveSlotTable WaveSlotTableData
+    {
+        get
+        {
+            return Get<WaveSlotTable>(DataTableIds.Slot);
+        }
+    }
+    public static WaveTable WaveTableData
+    {
+        get
+        {
+            return Get<WaveTable>(DataTableIds.Wave);
+        }
+    }
+    public static TowerTable TowerTableData
+    {
+        get 
+        {
+            return Get<TowerTable>(DataTableIds.Tower);
+        }
+    }
+
+
+    public static T Get<T>(string id) where T : DataTable
+    {
+        if (!tables.ContainsKey(id))
+        {
+            Debug.Log("id ¿À·ù");
+            return null;
+        }
+        return tables[id] as T;
+    }
+}

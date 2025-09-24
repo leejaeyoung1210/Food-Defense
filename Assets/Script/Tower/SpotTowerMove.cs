@@ -206,9 +206,22 @@ public class SpotTowerMove : MonoBehaviour
 
     private void OnenTab(Spot target) //UI 띄우기 타워에 캔버스 설정 (강화)
     {
+        if (target.tower == null)
+        {
+            Debug.Log("빈공간");
+            return;
+        }
         Debug.Log($"터치함{target.tower}");
+        if(target.tower != null && !Define.OnTowerCanvas)
+        {
+            var ui = target.tower.GetComponentInChildren<Canvas>(true);
+            var t = target.tower.GetComponent<Tower>();
+            ui.gameObject.SetActive(true);                 
+            Define.OnTowerCanvas = true;           
 
-        return;
+        }
+
+       
     }
 
     private void ResetState()

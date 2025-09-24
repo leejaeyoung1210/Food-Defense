@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Spot
   - Tower
+  - ' Button'
   layers:
   - Default
   - TransparentFX

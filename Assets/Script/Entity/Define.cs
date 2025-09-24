@@ -15,4 +15,6 @@ public static class Define
     public static int gold { get; set; } = 300;    
     public static int spawnCost { get; set; } = 10;
 
+    public static bool OnTowerCanvas { get; set; } = false;
+
 }

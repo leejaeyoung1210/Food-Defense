@@ -17,7 +17,7 @@ public class TowerData
     public string Name { get; set; }
     public TowerType Type { get; set; }
     public int Level { get; set; }
-    public int? NextLv { get; set; }
+    public int NextId { get; set; }
     public bool Upgradeable { get; set; }
     public int UpgradeCost { get; set; }
     public int Hp { get; set; }

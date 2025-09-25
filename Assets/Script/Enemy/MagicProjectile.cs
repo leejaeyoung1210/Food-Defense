@@ -10,7 +10,7 @@ public class MagicProjectile : MonoBehaviour
     private float damage;  
     private Animator animator;  
     Vector3 dir;
-
+    private bool movestop = false;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -29,8 +29,11 @@ public class MagicProjectile : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
-        dir = (target.position - transform.position).normalized;
-        transform.position += dir * (speed * Time.deltaTime);
+        if (!movestop)
+        {
+            dir = (target.position - transform.position).normalized;
+            transform.position += dir * (speed * Time.deltaTime);
+        }
     }
 
 
@@ -59,12 +62,14 @@ public class MagicProjectile : MonoBehaviour
 
         animator.SetTrigger("Hit");
         transform.localScale = new Vector2(2f, 2.5f);
+        movestop = true;
         StartCoroutine(AniEndig());   
     }
     IEnumerator AniEndig()
     {
         yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
         transform.localScale = Vector2.one;
+        movestop = false;
         gameObject.SetActive(false);
     }
 }

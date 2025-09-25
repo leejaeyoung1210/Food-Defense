@@ -1061,7 +1061,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87140885}
   m_Enabled: 1
-  m_CellSize: {x: 0.5, y: 0.5, z: 0}
+  m_CellSize: {x: 0.6, y: 0.6, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -2885,6 +2885,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1668742668238826407, guid: 6ab59f04c7d504143b2d9ca567b97dd5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -62
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668742668238826407, guid: 6ab59f04c7d504143b2d9ca567b97dd5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5095822953870651693, guid: 6ab59f04c7d504143b2d9ca567b97dd5, type: 3}
       propertyPath: m_SizeDelta.x
       value: -19.999998
@@ -2935,7 +2943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7864822477672593429, guid: 6ab59f04c7d504143b2d9ca567b97dd5, type: 3}
       propertyPath: m_VerticalAlignment
-      value: 512
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7864822477672593429, guid: 6ab59f04c7d504143b2d9ca567b97dd5, type: 3}
       propertyPath: m_hasFontAssetChanged
@@ -6064,7 +6072,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 50
     m_Right: 50
-    m_Top: 120
+    m_Top: 70
     m_Bottom: 0
   m_ChildAlignment: 1
   m_Spacing: 0
@@ -6454,7 +6462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2036962582
 Transform:
   m_ObjectHideFlags: 0

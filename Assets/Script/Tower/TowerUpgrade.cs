@@ -24,14 +24,14 @@ public class TowerUpgrade : MonoBehaviour
 
 
     public void Upgrade()
-    {
-        Debug.Log(tower.data.Name);
+    {        
         if (tower != null)
         {
             if (Define.gold >= tower.data.UpgradeCost)
             {
                 if (tower.data.Upgradeable)
                 {
+                    Define.gold -= tower.data.UpgradeCost;  
                     var table = DataTableManager.TowerTableData;
                     var data = table.Get(tower.data.NextId);
                     tower.Init(data);                    

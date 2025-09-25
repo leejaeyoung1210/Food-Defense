@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Tower : MonoBehaviour
 {
@@ -14,12 +16,14 @@ public class Tower : MonoBehaviour
     public float lastAttack;
     private List<GameObject> enemies = new List<GameObject>();
 
+    private  GameObject effectObj;
+
 
     private void Awake()
     {
         towerRange = GetComponent<CircleCollider2D>();
         pool = GetComponent<ObjectPooler>();
-        towerSptrite = GetComponentInChildren<SpriteRenderer>();
+        towerSptrite = GetComponentInChildren<SpriteRenderer>();        
     }
 
     public void Init(TowerData towerData)
@@ -34,7 +38,10 @@ public class Tower : MonoBehaviour
         attackIntaval = data.AttackSpeed;
         var hp = GetComponent<TowerHealth>();
         hp.AddData(data.Hp);
-        Debug.Log($"{towerData.Name},{towerData.Type},{towerData.AttackPower}");
+        if (data.Type == TowerType.Warrior)
+        {
+            effectObj = transform.Find("Effect")?.gameObject;
+        }
 
     }
 
@@ -90,16 +97,14 @@ public class Tower : MonoBehaviour
             switch (data.Type)
             {
                 case TowerType.Warrior:
-                    Debug.Log("Tower Attack");
-                   
-                    target.OnDamage(data.AttackPower, transform.position);
+                    Attack(targetGo);
                     break;
                 case TowerType.Arrow:
                     Shot(targetGo);
                     break;
                 case TowerType.Magic:
                     MagicShot(targetGo);
-                    //for(int i = 0; i < enemies.Count; i++)
+                    //for(int i = 0; i < enemies.Count; i++) //범위공격
                     //{
                     //    var t = enemies[i].GetComponent<IDamagable>();
                     //    if (t != null)
@@ -110,6 +115,20 @@ public class Tower : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private void Attack(GameObject target)
+    {
+        effectObj.SetActive(true);
+        target.GetComponent<IDamagable>().OnDamage(data.AttackPower, transform.position);
+        StartCoroutine(Damage());  
+    }
+
+    IEnumerator Damage()
+    {
+        var ani = effectObj.GetComponent<Animator>();
+        yield return new WaitForSeconds(ani.GetCurrentAnimatorClipInfo(0).Length);
+        effectObj.SetActive(false);
     }
 
     private void Shot(GameObject target)

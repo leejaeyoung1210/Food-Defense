@@ -1,7 +1,9 @@
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
-//using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.GraphicsBuffer;
+using System.Collections;
+
 
 public class Enemy : MonoBehaviour
 {
@@ -22,7 +24,7 @@ public class Enemy : MonoBehaviour
 
     private Animator anim;  
     private EnemyHealth enemyHealth => GetComponent<EnemyHealth>();
-
+    private GameObject effectObj;
 
     private void Awake()
     {
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
         currentPath = GameObject.FindWithTag("Spawn").GetComponent<WayPoint>();
         pool = GetComponent<ObjectPooler>();
         anim = GetComponent<Animator>();    
+
     }   
 
     public void Init(EnemyData enemyData)
@@ -40,6 +43,11 @@ public class Enemy : MonoBehaviour
         attackIntaval = data.AttackSpeed;
         var hp = GetComponent<EnemyHealth>();
         hp.AddData(data.Hp);
+
+        if (data.Type == EnemyTypes.Knight)
+        {
+            effectObj = transform.Find("Effect")?.gameObject;
+        }
     }
 
     private void OnEnable()
@@ -93,8 +101,7 @@ public class Enemy : MonoBehaviour
         switch (data.Type)
         {            
             case EnemyTypes.Knight:
-                Debug.Log("Melee Attack");  
-                other.GetComponent<TowerHealth>().OnDamage(data.AttackPower, transform.position);        
+                Attack(other);
                 break;
             case EnemyTypes.Archer:
                 Debug.Log("Archer Attack");
@@ -105,6 +112,19 @@ public class Enemy : MonoBehaviour
                 MagicShot(other);
                 break;
         }
+    }
+    private void Attack(GameObject target)
+    {
+        effectObj.SetActive(true);
+        target.GetComponent<IDamagable>().OnDamage(data.AttackPower, transform.position);
+        StartCoroutine(Damage());
+    }
+
+    IEnumerator Damage()
+    {
+        var ani = effectObj.GetComponent<Animator>();
+        yield return new WaitForSeconds(ani.GetCurrentAnimatorClipInfo(0).Length);
+        effectObj.SetActive(false);
     }
     private void Shot(GameObject target)
     {

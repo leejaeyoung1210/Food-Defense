@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+
 
 public class MagicProjectile : MonoBehaviour
 {
@@ -42,8 +44,7 @@ public class MagicProjectile : MonoBehaviour
             return;
         }
 
-        var hit = Physics2D.OverlapCircleAll(transform.position, 5f);
-        animator.SetTrigger("Hit");
+        var hit = Physics2D.OverlapCircleAll(transform.position, 5f);        
         foreach (var h in hit)
         {
            if (h.CompareTag("Tower"))
@@ -55,7 +56,15 @@ public class MagicProjectile : MonoBehaviour
                 h.GetComponent<IDamagable>()?.OnDamage(damage, transform.position);
            }
         }
-       
+
+        animator.SetTrigger("Hit");
+        transform.localScale = new Vector2(2f, 2.5f);
+        StartCoroutine(AniEndig());   
+    }
+    IEnumerator AniEndig()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+        transform.localScale = Vector2.one;
         gameObject.SetActive(false);
     }
 }

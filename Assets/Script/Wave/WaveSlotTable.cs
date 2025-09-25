@@ -1,7 +1,6 @@
 using CsvHelper.Configuration.Attributes;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 
 public class WaveSlot

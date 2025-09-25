@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98184fefc8555040af39c377a9ca077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 9ebbb8cd0f7addd479bb86b23e084f82, type: 2}
   enemySpeed: 1
   currentPath: {fileID: 0}
   attackIntaval: 1
@@ -188,7 +187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  data: {fileID: 11400000, guid: 9ebbb8cd0f7addd479bb86b23e084f82, type: 2}
   healthSlider: {fileID: 9179362847461389771}
 --- !u!70 &8029871020898925348
 CapsuleCollider2D:
@@ -239,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f78058c47eb1d4395de25fdbbc682e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 197789781283629359, guid: 19729cd9624154d468e84fdee888c70b, type: 3}
+  prefab: {fileID: 7496928321674624636, guid: 78335891300e80e418ef1c449c3da5c7, type: 3}
   poolSize: 3
 --- !u!95 &4720759219190444439
 Animator:

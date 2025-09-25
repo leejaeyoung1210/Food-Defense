@@ -9,6 +9,7 @@ TagManager:
   - Spot
   - Tower
   - ' Button'
+  - Pause
   layers:
   - Default
   - TransparentFX

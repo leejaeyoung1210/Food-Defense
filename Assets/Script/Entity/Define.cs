@@ -14,7 +14,9 @@ public static class Define
     public static int waveCount { get; set; } = 0;
     public static int gold { get; set; } = 300;    
     public static int spawnCost { get; set; } = 10;
-
     public static bool OnTowerCanvas { get; set; } = false;
+    public static bool BlockClickOneFrame = false;  
+    public static bool gameClear {  get; set; } = false;    
+    public static bool gameOver { get; set; } = false;  
 
 }

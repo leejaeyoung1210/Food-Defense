@@ -27,24 +27,7 @@ public class WaveSlotTable : DataTable
         var list = LoadCSV<WaveSlot>(textAsst.text);
 
         foreach (var slot in list)
-        {
-            //if (!slotTable.ContainsKey(slot.waveId))
-            //{
-            //    slotTable[slot.waveId] = new List<WaveSlot>();
-
-            //    Debug.Log($" {slot.waveId}, {slot.enemyId}");
-            //    slotTable[slot.waveId].Add(new WaveSlot
-            //    {
-            //        waveId = slot.waveId,
-            //        enemyId = slot.enemyId,
-            //        count = slot.count,
-            //        enemyData = enemyData.Get(slot.enemyId)  
-            //    });
-            //}
-            //else
-            //{
-            //    Debug.Log("아이디 중복오류");
-            //}
+        {           
             if (!slotTable.TryGetValue(slot.waveId, out var slots))
             {
                 slots = new List<WaveSlot>();

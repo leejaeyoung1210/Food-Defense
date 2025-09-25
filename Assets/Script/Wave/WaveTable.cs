@@ -11,6 +11,7 @@ public class WaveData
     public int Id { get; set; }
     public string Name { get; set; }
     public float waveTime { get; set; }
+    public int bonusCoin { get; set; }  
     public int waveRewardGold { get; set; }
 
     [CsvHelper.Configuration.Attributes.Ignore]

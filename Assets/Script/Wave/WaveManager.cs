@@ -7,9 +7,9 @@ using UnityEngine;
 
 
 public class WaveManager : MonoBehaviour
-{    
+{
     private WaveTable waveTable;
-    public float timer { get; private set; }   
+    public float timer { get; private set; }
     public EnemySpawner enemySpawner;
 
 
@@ -18,11 +18,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         waveTable = DataTableManager.WaveTableData;
-
-        //StartCoroutine(WaveSet());
-        Debug.Log($"[WM.Start] DTM.WaveTableData={(DataTableManager.WaveTableData == null ? "NULL" : "not null")}");
-        waveTable = DataTableManager.WaveTableData;
-        Debug.Log($"[WM.Start] waveTable={(waveTable == null ? "NULL" : "not null")}");
+        enemyTotalCount = 0;                          
         if (waveTable == null)
         {
             Debug.LogError("[WM] waveTable null → 초기화/순서 문제");
@@ -30,24 +26,21 @@ public class WaveManager : MonoBehaviour
         }
         StartCoroutine(WaveSet());
     }
-    
+
 
     private bool waveClearSkip = false;
 
-    private bool waveActive = false;    
+    private bool waveActive = false;
 
-   
+
 
     IEnumerator WaveSet() // 웨이브 단계
     {
-        Debug.Log($"[WM.WaveSet] waveTable null? {(waveTable == null)}, count={(waveTable == null ? -1 : waveTable.Count)}");
         for (int i = 0; i < waveTable.Count; i++)
         {
-
             var wd = waveTable.GetByIndex(i);
             if (wd == null)
             {
-                Debug.LogError($"[WM.WaveSet] waveTable.Get({i}) == null (데이터 테이블에서 {i}번째 웨이브가 비어있음)");
                 continue; // 혹은 yield break
             }
             waveActive = true;
@@ -59,10 +52,9 @@ public class WaveManager : MonoBehaviour
     }
 
     IEnumerator OnWave(WaveData wd) // 웨이브 플레이
-    {
-    
-
-        timer += wd.waveTime; //치트때문에 더함 나중에 수정해야함 
+    {        
+        timer = wd.waveTime;
+        Define.gold += wd.bonusCoin;
         foreach (var slot in wd.slots)
         {
 
@@ -74,17 +66,18 @@ public class WaveManager : MonoBehaviour
                 {
                     enemySpawner.Spawn(enemy, enemySpawner.transform.position);
                     enemyTotalCount++;
-                }               
+                }
                 yield return new WaitForSeconds(1f);
             }
 
         }
 
         while (true)
-        {            
+        {
             if (waveClearSkip)
-            {             
+            {
                 waveClearSkip = false;
+                timer += 100f;
                 yield break;
             }
 
@@ -92,17 +85,18 @@ public class WaveManager : MonoBehaviour
 
             if (enemyTotalCount <= 0)
             {
-               
+                if (Define.waveCount > waveTable.Count) //클리어 조건
+                {
+                    GameClear();
+                }
                 yield break;
             }
 
             if (timer <= 0f)
             {
-               
-                waveActive = false; 
-                Time.timeScale = 0f;
-            }
-
+                waveActive = false;
+                GameOver();
+            }        
             yield return null;
         }
     }
@@ -119,4 +113,20 @@ public class WaveManager : MonoBehaviour
     {
         waveClearSkip = true;
     }
+
+    private void GameClear()
+    {
+        Time.timeScale = 0f;
+        Define.gameClear = true;    
+    }
+
+    private void GameOver()
+    {
+        Time.timeScale = 0f;        
+        Define.gameOver = true; 
+    }
+        
+
+
+
 }

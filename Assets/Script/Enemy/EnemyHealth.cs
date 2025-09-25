@@ -10,6 +10,8 @@ public class EnemyHealth : Living
 
     public static event System.Action<GameObject> OnAnyEnemyRemoved;
 
+    private int gold =4;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -45,6 +47,7 @@ public class EnemyHealth : Living
         healthSlider.gameObject.SetActive(false);
         yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
         WaveManager.enemyTotalCount--;
+        Define.gold += gold + Define.waveCount;
         OnAnyEnemyRemoved?.Invoke(gameObject);//포탑 배열에서 지워지기 위함 
         Destroy(gameObject);
     }

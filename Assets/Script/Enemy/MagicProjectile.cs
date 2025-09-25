@@ -6,9 +6,13 @@ public class MagicProjectile : MonoBehaviour
     private Transform target;
     private float speed;
     private float damage;  
-
+    private Animator animator;  
     Vector3 dir;
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     public void Set(Transform target, float damage, float speed = 3f)
     {
         this.target = target;
@@ -39,6 +43,7 @@ public class MagicProjectile : MonoBehaviour
         }
 
         var hit = Physics2D.OverlapCircleAll(transform.position, 5f);
+        animator.SetTrigger("Hit");
         foreach (var h in hit)
         {
            if (h.CompareTag("Tower"))

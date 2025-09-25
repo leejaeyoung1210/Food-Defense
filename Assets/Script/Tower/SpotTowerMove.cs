@@ -1,4 +1,4 @@
-using UnityEngine.UI;
+//using UnityEngine.UI;
 using UnityEngine;
 using System;
 
@@ -24,9 +24,14 @@ public class SpotTowerMove : MonoBehaviour
     Spot targetSpot;
     private bool swaping;
 
+    private Canvas ui;
+    private Tower targetTower;
+
     bool moving = false;
 
     private bool isSelected = false; // 선택된 상태인지    
+
+    private float tabInterval = 0.02f;
 
     private void Awake()
     {
@@ -41,9 +46,9 @@ public class SpotTowerMove : MonoBehaviour
         {
             touch = Input.GetTouch(0);
             if (!moving)
-            {
+            {              
                 if (touch.phase == TouchPhase.Began)
-                {
+                {                    
                     startTime = Time.time;
                     Began();
                 }
@@ -80,8 +85,6 @@ public class SpotTowerMove : MonoBehaviour
                         ResetState();
                         return;
                     }
-
-
                 }
 
                 if (Vector2.Distance(current.tower.transform.position, endPos) < 0.001f)
@@ -110,7 +113,6 @@ public class SpotTowerMove : MonoBehaviour
             lr.positionCount = 0; //라인클리어
             return;
         }
-
 
         if (hit.collider == col && !moving) // 어딘가 찍엇다 그럼 자신인지 검사 필요 
         {
@@ -141,7 +143,6 @@ public class SpotTowerMove : MonoBehaviour
             lr.positionCount = 2;
             lr.SetPosition(1, dragPos);
         }
-
     }
 
     private void Move()
@@ -170,11 +171,12 @@ public class SpotTowerMove : MonoBehaviour
                 return;
             }
 
-            if(targetSpot.point == current.point) // 이동하는거 막고나서 텝인지 검사하자.
+            if(targetSpot.point == current.point) // 같은 위치인지 
             { 
-                if(Time.time - startTime <= tapThreshold)
+                if(Time.time - startTime <= tapThreshold) // 
                 {
                     OnenTab(targetSpot);
+                    isSelected = false;
                     return;
                 }
                 else
@@ -182,8 +184,7 @@ public class SpotTowerMove : MonoBehaviour
                     Debug.Log("같은위치 드래그");
                     isSelected = false;
                     return;
-                }
-                
+                }                
             }
 
             endPos = targetSpot.point;
@@ -198,10 +199,7 @@ public class SpotTowerMove : MonoBehaviour
                 moving = true;
                 swaping = true;
             }
-
         }
-
-
     }
 
     private void OnenTab(Spot target) //UI 띄우기 타워에 캔버스 설정 (강화)
@@ -212,16 +210,20 @@ public class SpotTowerMove : MonoBehaviour
             return;
         }
         Debug.Log($"터치함{target.tower}");
-        if(target.tower != null && !Define.OnTowerCanvas)
+        if (target.tower != null && !Define.OnTowerCanvas && isSelected)
         {
-            var ui = target.tower.GetComponentInChildren<Canvas>(true);
-            var t = target.tower.GetComponent<Tower>();
+            ui = target.tower.GetComponentInChildren<Canvas>(true);
+            targetTower = target.tower.GetComponent<Tower>();
             ui.gameObject.SetActive(true);                 
-            Define.OnTowerCanvas = true;           
-
+            Define.OnTowerCanvas = true;        
         }
+    }
 
-       
+    private void CloseTab()
+    {
+        ui.gameObject.SetActive(false);
+        Define.OnTowerCanvas = false;   
+        isSelected = false;
     }
 
     private void ResetState()

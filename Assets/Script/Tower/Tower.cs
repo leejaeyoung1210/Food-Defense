@@ -98,14 +98,15 @@ public class Tower : MonoBehaviour
                     Shot(targetGo);
                     break;
                 case TowerType.Magic:
-                    for(int i = 0; i < enemies.Count; i++)
-                    {
-                        var t = enemies[i].GetComponent<IDamagable>();
-                        if (t != null)
-                        {
-                            t.OnDamage(data.AttackPower, transform.position);
-                        }
-                    }
+                    MagicShot(targetGo);
+                    //for(int i = 0; i < enemies.Count; i++)
+                    //{
+                    //    var t = enemies[i].GetComponent<IDamagable>();
+                    //    if (t != null)
+                    //    {
+                    //        t.OnDamage(data.AttackPower, transform.position);
+                    //    }
+                    //}
                     break;
             }
         }
@@ -119,7 +120,16 @@ public class Tower : MonoBehaviour
      
         Projectile projectile = arrow.GetComponent<Projectile>();   
         projectile.Set(target.transform,data.AttackPower); 
-
-
     }
+    private void MagicShot(GameObject target)
+    {
+        Debug.Log("Fire");
+        GameObject ball = pool.GetPoolobject();
+        ball.transform.position = transform.position;
+        ball.SetActive(true);
+
+        MagicProjectile magicprojectile = ball.GetComponent<MagicProjectile>();
+        magicprojectile.Set(target.transform, data.AttackPower);
+    }
+
 }

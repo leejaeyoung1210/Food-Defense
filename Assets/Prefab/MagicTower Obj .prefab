@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6582792865850900270}
   - component: {fileID: 6265177816826236095}
   - component: {fileID: 313166396119138531}
+  - component: {fileID: 6498502436123071847}
   m_Layer: 0
   m_Name: 'MagicTower Obj '
   m_TagString: Tower
@@ -139,6 +140,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   healthSlider: {fileID: 5161843606110122102}
+--- !u!114 &6498502436123071847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7337339290977154833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f78058c47eb1d4395de25fdbbc682e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5810994887123435833, guid: 3cb662727c56e974ba56840ef0d6ef85, type: 3}
+  poolSize: 3
 --- !u!1001 &487167500334176976
 PrefabInstance:
   m_ObjectHideFlags: 0

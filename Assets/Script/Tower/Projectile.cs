@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
 public class Projectile : MonoBehaviour
@@ -7,12 +8,15 @@ public class Projectile : MonoBehaviour
     private float speed;
     private float damage;
     private Rigidbody2D rb;
-
+    private Animator animator;  
     Vector3 dir;
+    [SerializeField]
+    float rotat = 0f;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();    
     }       
 
     public void Set(Transform target, float damage, float speed = 3f)
@@ -33,7 +37,7 @@ public class Projectile : MonoBehaviour
         }
         dir = (target.position - transform.position).normalized;
         transform.position += dir * (speed * Time.deltaTime);
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + rotat;
         rb.MoveRotation(angle);
 
 

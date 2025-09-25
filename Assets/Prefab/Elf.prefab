@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.854, y: 0.409, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8258319707921507071}
@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98184fefc8555040af39c377a9ca077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 91ddf29448946ac469437a58088208da, type: 2}
   enemySpeed: 1
   currentPath: {fileID: 0}
   attackIntaval: 1
@@ -188,7 +187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  data: {fileID: 11400000, guid: 91ddf29448946ac469437a58088208da, type: 2}
   healthSlider: {fileID: 6568656537510628547}
 --- !u!70 &8730638412382541463
 CapsuleCollider2D:
@@ -239,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f78058c47eb1d4395de25fdbbc682e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 94600125948455441, guid: e479a29c699891d44ad843cc3270b726, type: 3}
+  prefab: {fileID: 6881694915753428508, guid: a84d41098b393e04aa8b9165a36bec39, type: 3}
   poolSize: 3
 --- !u!95 &6073556276427238887
 Animator:

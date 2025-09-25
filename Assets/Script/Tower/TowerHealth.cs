@@ -54,6 +54,7 @@ public class TowerHealth : Living
         base.Die();
         mySpot.tower = null;
         mySpot.isSpawning = false;
+        Define.OnTowerCanvas = false;
         Destroy(gameObject);
     }
 }

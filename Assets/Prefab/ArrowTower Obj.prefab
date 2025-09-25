@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f78058c47eb1d4395de25fdbbc682e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2225261508183696018, guid: a0daf42f9c8ad16488a857bb826aa961, type: 3}
+  prefab: {fileID: 6486171987590817593, guid: 82c6f2b6b0b6030449e6f700e50a539b, type: 3}
   poolSize: 5
 --- !u!70 &2605797139843127114
 CapsuleCollider2D:

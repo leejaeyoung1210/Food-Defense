@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314556446562229341, guid: 21f06828c67334cf28cd7d8cf8aa4882, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -800
+      value: -600
       objectReference: {fileID: 0}
     - target: {fileID: 314556446562229341, guid: 21f06828c67334cf28cd7d8cf8aa4882, type: 3}
       propertyPath: m_SizeDelta.y
@@ -362,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 314556446562229341, guid: 21f06828c67334cf28cd7d8cf8aa4882, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 314556446562229341, guid: 21f06828c67334cf28cd7d8cf8aa4882, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -522,6 +522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 670573847}
   - component: {fileID: 670573848}
+  - component: {fileID: 670573849}
   m_Layer: 5
   m_Name: bg
   m_TagString: Untagged
@@ -576,6 +577,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &670573849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670573846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab634ab15aabc0f47b6b7be35b5d4a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &704923267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 17927761553444592, guid: 21f06828c67334cf28cd7d8cf8aa4882, type: 3}
@@ -687,7 +700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4982014788377573031, guid: 0b9319d3eb8784cc9a84d8e6db5cfc88, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -800
+      value: -600
       objectReference: {fileID: 0}
     - target: {fileID: 4982014788377573031, guid: 0b9319d3eb8784cc9a84d8e6db5cfc88, type: 3}
       propertyPath: m_SizeDelta.y
@@ -875,7 +888,6 @@ GameObject:
   - component: {fileID: 1538144086}
   - component: {fileID: 1538144089}
   - component: {fileID: 1538144088}
-  - component: {fileID: 1538144087}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -903,18 +915,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1538144087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538144085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab634ab15aabc0f47b6b7be35b5d4a86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1538144088
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,9 +23,12 @@ public class TowerSpot : MonoBehaviour
 
     public List<Spot> spotPoints = new List<Spot>();
 
+    private UIManager uiManager;
+
     //public int Count => spotPoints?.Count ?? 0;
     private void Awake()
     {
+        uiManager = GameObject.FindWithTag("UiMgr").GetComponent<UIManager>();   
         //tilemap = GameObject.FindWithTag("Ground").GetComponent<Tilemap>();    
         MarkBuildableTiles(); //타일맵에서 설치 가능한 타일 셋팅 
     }
@@ -73,5 +76,25 @@ public class TowerSpot : MonoBehaviour
         }
         Debug.Log("여기는 스폿이아니에요");
         return null;  
+    }
+
+    public bool AllSpot()
+    {
+        foreach (var spot in spotPoints)
+        {
+            if(!spot.isSpawning)
+            {
+                return false;
+            }            
+        }
+        return true;
+    }
+
+    public void TrySpawn()
+    {
+        if(!AllSpot())
+        {
+            uiManager.SetSpawnButton(true);
+        }
     }
 }

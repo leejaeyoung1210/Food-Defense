@@ -1217,7 +1217,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sandwichLV3
+      name: sandwichLV4
       rect:
         serializedVersion: 2
         x: 0
@@ -1547,7 +1547,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sandwichLV4
+      name: sandwichLV
       rect:
         serializedVersion: 2
         x: 192
@@ -1890,10 +1890,10 @@ TextureImporter:
       arrow1_7: 3401600167761061534
       arrow1_70: 1909140553
       arrow1_9: -8740789053841691911
+      sandwichLV: -389578028
       sandwichLV1: 7731604870943726345
       sandwichLV2: 8390554435148689809
-      sandwichLV3: 1961661432
-      sandwichLV4: -389578028
+      sandwichLV4: 1961661432
       sandwichLV5: -660117144
       sandwichLV6: 1276595948
   mipmapLimitGroupName: 

@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
 
     public void Set(Transform target, float damage, float speed = 3f)
     {
+        //transform.SetParent(null);
         this.target = target;
         this.speed = speed;
         this.damage = damage;        

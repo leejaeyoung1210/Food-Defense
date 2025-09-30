@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 [System.Serializable]
 public class TowerTypePrefab
 {
@@ -15,13 +16,15 @@ public class TowerSpawner : MonoBehaviour
     private Dictionary<TowerType, GameObject> prefabs;
 
     public TowerSpot towerSpot;
+      
+    public UIManager manager;   
 
     private void Awake()
     {
         prefabs = new Dictionary<TowerType, GameObject>();
         foreach (var entry in towerPrefabs)
         {
-            prefabs[entry.type] = entry.prefab;
+            prefabs[entry.type] = entry.prefab;            
         }
     }
 
@@ -84,6 +87,9 @@ public class TowerSpawner : MonoBehaviour
                 newtower.GetComponent<TowerHealth>().SetSpot(towerSpot.spotPoints[i]); // 타워가 자기 자리 알고있게
                 newtower.GetComponent<Tower>().Init(randomTower);
                 Define.spawnCost += 1;
+
+                bool allFiled = towerSpot.AllSpot();
+                manager.SetSpawnButton(!allFiled);   
                 break;
             }
         }

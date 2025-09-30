@@ -34,6 +34,12 @@ public class DataTableManager
         var towerTable = new TowerTable();
         towerTable.Load(DataTableIds.Tower);
         tables.Add(DataTableIds.Tower, towerTable);
+        
+        //var skillTable = new SkillTable();  
+        //skillTable.Load(DataTableIds.Skill);
+        //tables.Add(DataTableIds.Tower, skillTable);
+
+
     }
 
     public static EnemyTable EnemyTableData
@@ -66,6 +72,13 @@ public class DataTableManager
         }
     }
 
+    //public static SkillTable SkillTableData
+    //{
+    //    get
+    //    {
+    //        return Get<SkillTable>(DataTableIds.Skill);
+    //    }
+    //}   
 
     public static T Get<T>(string id) where T : DataTable
     {

@@ -7,6 +7,7 @@ public static class DataTableIds
     public static readonly string Wave = "WaveTable";
     public static readonly string Slot = "WaveSlotTable";
     public static readonly string Tower = "TowerTable";
+    //public static readonly string Skill = "SkillTable";
 
 }
 public static class Define

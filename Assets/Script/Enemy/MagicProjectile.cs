@@ -11,19 +11,36 @@ public class MagicProjectile : MonoBehaviour
     private Animator animator;  
     Vector3 dir;
     private bool movestop = false;
+
+    private float maxLifetime = 4f;
+    private float currentLifetime = 0f;
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
+
+    private void OnEnable()
+    {
+        movestop = false;
+        currentLifetime = 0f;
+    }
     public void Set(Transform target, float damage, float speed = 3f)
     {
+        transform.SetParent(null);
         this.target = target;
         this.speed = speed;
         this.damage = damage;
     }
 
     private void Update()
-    {     
+    {
+
+        currentLifetime += Time.deltaTime;
+        if (currentLifetime >= maxLifetime)
+        {           
+            gameObject.SetActive(false);
+            return;
+        }
         if (target == null || !target.gameObject.activeInHierarchy)
         {
             gameObject.SetActive(false);

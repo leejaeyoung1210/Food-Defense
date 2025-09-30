@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using static UnityEngine.GraphicsBuffer;
 
 public class Tower : MonoBehaviour
@@ -18,9 +19,11 @@ public class Tower : MonoBehaviour
 
     private  GameObject effectObj;
 
+    public Tilemap tilemap;
 
     private void Awake()
     {
+        tilemap = GameObject.FindWithTag("Spot").GetComponent<Tilemap>(); 
         towerRange = GetComponent<CircleCollider2D>();
         pool = GetComponent<ObjectPooler>();
         towerSptrite = GetComponentInChildren<SpriteRenderer>();        
@@ -28,13 +31,17 @@ public class Tower : MonoBehaviour
 
     public void Init(TowerData towerData)
     {
+       Vector2 tileSize = tilemap.layoutGrid.cellSize;
+        float tileWorldSizeX = tileSize.x;
+
         data = towerData;
         if(towerData.spriteIcon ==null)
         {
             Debug.Log($"{towerData.Name},{towerData.Icon}");
         }
         towerSptrite.sprite = towerData.spriteIcon;
-        towerRange.radius = data.Range;
+        towerRange.radius = data.Range * tileWorldSizeX;
+        //towerRange.radius = (data.Range * tileWorldSizeX) / 2f;
         attackIntaval = data.AttackSpeed;
         var hp = GetComponent<TowerHealth>();
         hp.AddData(data.Hp);
@@ -119,16 +126,30 @@ public class Tower : MonoBehaviour
 
     private void Attack(GameObject target)
     {
+        Vector2 dir = (target.transform.position - transform.position).normalized;
+        float radius = 0.2f;
+
+
+        effectObj.transform.localPosition = dir * radius;
+
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        effectObj.transform.rotation = Quaternion.AngleAxis(angle-90f, Vector3.forward);
+
         effectObj.SetActive(true);
         target.GetComponent<IDamagable>().OnDamage(data.AttackPower, transform.position);
         StartCoroutine(Damage());  
     }
 
     IEnumerator Damage()
-    {
+    {      
         var ani = effectObj.GetComponent<Animator>();
+        ani.Play("TowerAttack", -1, 0f);
+        //ani.CrossFade("TowerAttack", 0f, -1, 0f);
         yield return new WaitForSeconds(ani.GetCurrentAnimatorClipInfo(0).Length);
         effectObj.SetActive(false);
+        effectObj.transform.rotation = Quaternion.identity;
+        effectObj.transform.position = transform.position;
     }
 
     private void Shot(GameObject target)

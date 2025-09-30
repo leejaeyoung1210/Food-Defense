@@ -9,6 +9,16 @@ public class TowerHealth : Living
 
     private Spot mySpot;
 
+    private TowerSpot towerSpot;
+
+    public UIManager upui;
+
+    private void Awake()
+    {
+        towerSpot = GameObject.FindWithTag("Spot").GetComponent<TowerSpot>();
+        upui = GameObject.FindWithTag("UiMgr").GetComponent<UIManager>();   
+    }
+
     public void SetSpot(Spot spot)
     {
         mySpot = spot;
@@ -52,9 +62,15 @@ public class TowerHealth : Living
         if (mySpot == null) return;
 
         base.Die();
+
+        if (Define.OnTowerCanvas && upui != null)
+        {
+            upui.CloseUI();
+        }
         mySpot.tower = null;
         mySpot.isSpawning = false;
         Define.OnTowerCanvas = false;
+        towerSpot.TrySpawn();
         Destroy(gameObject);
     }
 }

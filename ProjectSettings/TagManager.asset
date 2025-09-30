@@ -10,6 +10,7 @@ TagManager:
   - Tower
   - ' Button'
   - Pause
+  - UiMgr
   layers:
   - Default
   - TransparentFX

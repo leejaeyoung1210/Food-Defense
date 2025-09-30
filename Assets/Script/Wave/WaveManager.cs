@@ -20,8 +20,7 @@ public class WaveManager : MonoBehaviour
         waveTable = DataTableManager.WaveTableData;
         enemyTotalCount = 0;                          
         if (waveTable == null)
-        {
-            Debug.LogError("[WM] waveTable null → 초기화/순서 문제");
+        {            
             return;
         }
         StartCoroutine(WaveSet());
@@ -42,7 +41,7 @@ public class WaveManager : MonoBehaviour
             if (wd == null)
             {
                 continue; // 혹은 yield break
-            }
+            }            
             waveActive = true;
             Define.waveCount++;
 

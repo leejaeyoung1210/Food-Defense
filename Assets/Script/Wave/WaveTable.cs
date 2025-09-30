@@ -43,6 +43,8 @@ public class WaveTable : DataTable
                 wave.slots = SlotsLoad(wave.Id);
                 waves.Add(wave.Id, wave);
 
+
+
             }
             else { Debug.Log("ม฿บน"); }
         }

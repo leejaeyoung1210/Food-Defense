@@ -1,8 +1,11 @@
+using System;
+using System.Collections;
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
-using System.Collections;
 
 
 public class Enemy : MonoBehaviour
@@ -22,24 +25,36 @@ public class Enemy : MonoBehaviour
 
     private ObjectPooler pool;
 
-    private Animator anim;  
+    private Animator anim;
     private EnemyHealth enemyHealth => GetComponent<EnemyHealth>();
     private GameObject effectObj;
 
+    private Material material;
+
+    public Tilemap tilemap;
+
     private void Awake()
     {
+        //material = GetComponent<SpriteRenderer>().material;
+        tilemap = GameObject.FindWithTag("Spot").GetComponent<Tilemap>();
+        material = Instantiate(GetComponent<SpriteRenderer>().material);
+        GetComponent<SpriteRenderer>().material = material;
+
         enemyRange = GetComponent<CircleCollider2D>();
         currentPath = GameObject.FindWithTag("Spawn").GetComponent<WayPoint>();
         pool = GetComponent<ObjectPooler>();
-        anim = GetComponent<Animator>();    
+        anim = GetComponent<Animator>();
+    }
 
-    }   
 
     public void Init(EnemyData enemyData)
     {
+        Vector2 tileSize = tilemap.layoutGrid.cellSize;
+        float tileWorldSizeX = tileSize.x;
+
         data = enemyData;
         enemySpeed = data.MoveSpeed;
-        enemyRange.radius = data.Range;
+        enemyRange.radius = data.Range* tileWorldSizeX;
         attackIntaval = data.AttackSpeed;
         var hp = GetComponent<EnemyHealth>();
         hp.AddData(data.Hp);
@@ -48,6 +63,9 @@ public class Enemy : MonoBehaviour
         {
             effectObj = transform.Find("Effect")?.gameObject;
         }
+        SetShader(enemyData.Level);
+        Debug.Log($"À¯´Ö ·¹º§:    {enemyData.Level}");      
+
     }
 
     private void OnEnable()
@@ -71,27 +89,32 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (enemyHealth.IsDead) return; 
-
-        Vector2 oldpos = transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, targetposition, enemySpeed * Time.deltaTime);
-
-        float xscale = transform.position.x - oldpos.x;
-
-        transform.localScale = new Vector3(Mathf.Sign(xscale), 1, 1);
+        if (enemyHealth.IsDead) return;
 
 
-        float distanceToTarget = Vector3.Distance(transform.position, targetposition);
+        transform.position = Vector2.MoveTowards(transform.position, targetposition, enemySpeed * Time.deltaTime);
+
+        float distanceToTarget = Vector2.Distance(transform.position, targetposition);
 
         if (distanceToTarget < 0.01f)
         {
+
+            if (currentPoint <= 9 && (currentPoint == 1 || currentPoint % 2 == 1 || currentPoint == 6))
+            {
+                Vector2 scale = transform.localScale;
+                scale.x *= -1;
+                transform.localScale = scale;
+            }
+
+            currentPoint++;
             if (currentPoint == currentPath.wayindex)
             {
                 currentPoint = 0;
             }
 
+
             targetposition = currentPath.GetWayPoint(currentPoint);
-            currentPoint++;
+
         }
     }
 
@@ -99,7 +122,7 @@ public class Enemy : MonoBehaviour
     {
         anim.SetTrigger("Attack");
         switch (data.Type)
-        {            
+        {
             case EnemyTypes.Knight:
                 Attack(other);
                 break;
@@ -129,7 +152,7 @@ public class Enemy : MonoBehaviour
     private void Shot(GameObject target)
     {
         Debug.Log("Shot");
-        GameObject arrow = pool.GetPoolobject(); 
+        GameObject arrow = pool.GetPoolobject();
         arrow.transform.position = transform.position;
         arrow.SetActive(true);
 
@@ -148,5 +171,76 @@ public class Enemy : MonoBehaviour
         magicprojectile.Set(target.transform, data.AttackPower);
     }
 
+    private void SetShader(int level)
+  {
+        //material.EnableKeyword("OUTBASE_ON");
+        //material.EnableKeyword("OUTLINE_ON");
+        switch (level)
+        {
+            case 1:               
+                break;
+            case 2:
+                material.EnableKeyword("OUTBASE_ON");
+                material.SetColor("_OutlineColor", new Color32(173, 255, 47, 255));
+                material.SetFloat("_OutlineWidth", 0.005f);
+                Debug.Log($"[Shader] OutlineColor: {material.GetColor("_OutlineColor")}");
+                Debug.Log($"[Shader] OutlineWidth: {material.GetFloat("_OutlineWidth")}");
+                Debug.Log($"[Shader] Distortion Amount: {material.GetFloat("_Amount")}");
+                break;
+            case 3:
+                material.EnableKeyword("OUTBASE_ON");
+                material.SetColor("_OutlineColor", new Color(0, 255, 255, 255));
+                material.SetFloat("_OutlineWidth", 0.005f);
+                //material.EnableKeyword("OUTLINE_USES_DISTORTION");
+                material.SetFloat("_Amount", 0.05f);
+
+                material.SetColor("_ShineColor", new Color32(225, 255, 224, 255));
+                material.SetFloat("_ShineWidth", 0.08f);
+                material.SetFloat("_ShineGlow", 0.1f);
+                break;
+            case 4:
+                material.EnableKeyword("OUTBASE_ON");
+                material.SetColor("_OutlineColor", new Color(255, 0, 255, 255));
+                material.SetFloat("_OutlineWidth", 0.005f);
+                //material.EnableKeyword("OUTLINE_USES_DISTORTION");
+                material.SetFloat("_Amount", 0.05f);
+
+                material.SetColor("_ShineColor", new Color32(255, 209, 255, 255));
+                material.SetFloat("_ShineWidth", 0.08f);
+                material.SetFloat("_ShineGlow", 0.1f);
+                break;
+            case 5:
+                material.EnableKeyword("OUTBASE_ON");
+                material.SetColor("_OutlineColor", new Color32(255, 69, 0, 255));
+                material.SetFloat("_OutlineWidth", 0.005f);
+                //material.EnableKeyword("OUTLINE_USES_DISTORTION");
+                material.SetFloat("_Amount", 0.05f);
+
+                material.SetFloat("_HsvShift", 38f);
+                material.SetFloat("_HsvSaturation", 1f);
+                material.SetFloat("_HsvBright", 2f);
+
+                material.SetColor("_ShineColor", new Color32(255, 244, 194, 255));
+                material.SetFloat("_ShineWidth", 0.08f);
+                material.SetFloat("_ShineGlow", 0.1f);
+                break;
+            case 6:
+                material.EnableKeyword("OUTBASE_ON");
+                material.SetColor("_OutlineColor", new Color32(255, 215, 0, 255));
+                material.SetFloat("_OutlineWidth", 0.005f);
+                //material.EnableKeyword("OUTLINE_USES_DISTORTION");
+                material.SetFloat("_Amount", 0.05f);
+
+                material.SetFloat("_HsvShift", 180f);
+                material.SetFloat("_HsvSaturation", 1f);
+                material.SetFloat("_HsvBright", 2f);
+
+                material.SetColor("_ShineColor", new Color32(255, 255, 255, 255));
+                material.SetFloat("_ShineWidth", 0.08f);
+                material.SetFloat("_ShineGlow", 0.1f);
+
+                break;
+        }
+    }
 
 }

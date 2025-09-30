@@ -1,7 +1,10 @@
 using NUnit.Framework.Interfaces;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -19,7 +22,7 @@ public class UIManager : MonoBehaviour
     public GameObject pause;
     public GameObject clearUi;
     public GameObject overUi;
-    
+
     public TextMeshProUGUI clearWaveText;
     //public TextMeshProUGUI clearGoldText;
     //public TextMeshProUGUI clearRpText;
@@ -29,24 +32,119 @@ public class UIManager : MonoBehaviour
     //public TextMeshProUGUI overGoldText;
     //public TextMeshProUGUI overRpText;
 
+    public Button spawnBut;
     public AudioSource audio;
 
+    public GameObject upPanel;
+    public TextMeshProUGUI towerName;
+    public TextMeshProUGUI upgradeGold;
+    public TextMeshProUGUI sellGold;
+    private Tower currentTower;
+    public Button upgradeButton;
 
 
-    private void Awake()
+    public bool CheckTouchInUI(GameObject target)
     {
-        //pause = GameObject.FindWithTag("Pause");
+        List<RaycastResult> targets = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        }, targets);
+
+        foreach(var tar in targets)
+        {
+            if(tar.gameObject == target)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
-           
+
+    public void OpenUI(GameObject towerObject)
+    {
+        CloseUI();
+
+        Tower tower = towerObject.GetComponent<Tower>();
+        currentTower = tower;
+
+        if (upPanel != null)
+            upPanel.SetActive(true);
+
+        RefreshUI();
+        Define.OnTowerCanvas = true;
+    }
+
+
+    public void Upgrade()
+    {
+        if (currentTower == null) return;
+
+        if (Define.gold >= currentTower.data.UpgradeCost && currentTower.data.Upgradeable)
+        {
+            Define.gold -= currentTower.data.UpgradeCost;
+            var newData = DataTableManager.TowerTableData.Get(currentTower.data.NextId);
+            currentTower.Init(newData);
+            RefreshUI();
+        }
+    }
+
+    public void CloseUI()
+    {
+        if (upPanel != null)
+            upPanel.SetActive(false);
+
+        currentTower = null;
+        Define.OnTowerCanvas = false;
+    }
+    public void Sell()
+    {
+        if (currentTower == null) return;
+
+        Define.gold += currentTower.data.ResellPrice;
+
+        var spot = currentTower.GetComponentInParent<TowerHealth>().GetSpot();
+        if (spot != null)
+        {
+            spot.tower = null;
+            spot.isSpawning = false;
+        }
+
+        Destroy(currentTower.gameObject);
+        CloseUI();
+    }
+
+    private void RefreshUI()
+    {
+        if (currentTower == null) return;
+
+        towerName.text = currentTower.data.Name;
+        // 업그레이드 비용
+        if (currentTower.data.Level == 6)
+        {
+            upgradeGold.text = "X";  // 최종레벨이면 업그레이드 불가
+            upgradeButton.interactable = false;
+        }
+        else
+        {
+            upgradeGold.text = currentTower.data.UpgradeCost.ToString();
+            upgradeButton.interactable = true;
+        }
+
+        // 판매 가격
+        sellGold.text = currentTower.data.ResellPrice.ToString();
+    }
+
     private void Update()
     {
         WaveLoad();
         GoldLoad();
         TimerLoad();
         SpawnCostLoad();
-        if(Define.gameClear)
+        if (Define.gameClear)
         {
-            audio.Stop();   
+            audio.Stop();
             GameClear();
         }
 
@@ -54,6 +152,14 @@ public class UIManager : MonoBehaviour
         {
             audio.Stop();
             GameOver();
+        }
+
+        if(Input.touchCount > 0)
+        {
+            if (upPanel.activeSelf && !CheckTouchInUI(upPanel))
+            {
+                CloseUI();
+            }
         }
     }
 
@@ -100,17 +206,23 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("StartScene");
     }
-   
+
     public void GameClear()
     {
-        clearWaveText.text = $"최종 웨이브: {Define.waveCount}";       
-        clearUi.gameObject.SetActive(true);    
+        clearWaveText.text = $"최종 웨이브: {Define.waveCount}";
+        clearUi.gameObject.SetActive(true);
     }
     public void GameOver()
     {
         overWaveText.text = $"최종 웨이브: {Define.waveCount}";
         overUi.gameObject.SetActive(true);
     }
+
+    public void SetSpawnButton(bool isActive)
+    {
+        spawnBut.interactable = isActive;
+    }
+
 
 }
 

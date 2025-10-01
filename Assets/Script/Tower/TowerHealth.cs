@@ -55,7 +55,6 @@ public class TowerHealth : Living
         healthSlider.gameObject.SetActive(true);
         base.OnDamage(damage, hitPoint);
         healthSlider.value = health / MaxHealth;
-        Debug.Log($"µ¥¹ÌÁö{damage}, {health}");
     }
 
     protected override void Die()

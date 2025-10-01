@@ -22,6 +22,8 @@ public class StageManager : MonoBehaviour
 
     public List<TowerSpot> towerSpots;
 
+    public UIManager uiManager;
+
     private int currentStage = 0;
 
     void Start()
@@ -38,6 +40,10 @@ public class StageManager : MonoBehaviour
     {
         if(stageIndex <0) return;
         
+        if(stageIndex ==2)
+        {
+            waypoints[3].way.SetActive(true);
+        }
 
         waypoints[currentStage].way.SetActive(false);                
         tilemaps[currentStage].gameObject.SetActive(false);
@@ -48,7 +54,10 @@ public class StageManager : MonoBehaviour
         tilemaps[stageIndex].gameObject.SetActive(true);
         waypoints[stageIndex].way.SetActive(true);
         towerSpots[stageIndex].MarkBuildableTiles();
-        towerSpawner.SetTowerSpot(towerSpots[stageIndex]);  
+        towerSpawner.SetTowerSpot(towerSpots[stageIndex]);
+        uiManager.SetSpawnButton(true);
+
+
 
 
         if (stageIndex ==10)

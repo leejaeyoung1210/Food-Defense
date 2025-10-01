@@ -11,11 +11,11 @@ using static UnityEngine.GraphicsBuffer;
 public class Enemy : MonoBehaviour
 {
     public EnemyData data;
-    
-    public float enemySpeed = 1f;
-    public float baseSpeed = 1f;    
 
-    private Vector2 targetposition;
+    public float enemySpeed = 1f;
+    public float baseSpeed = 1f;
+
+    public Vector2 targetposition;
 
     public WayPoint currentPath;
     private int currentPoint;
@@ -55,10 +55,10 @@ public class Enemy : MonoBehaviour
         float tileWorldSizeX = tileSize.x;
 
         data = enemyData;
-        
+
         baseSpeed = data.MoveSpeed;
         enemySpeed = baseSpeed;
-        enemyRange.radius = data.Range* tileWorldSizeX;
+        enemyRange.radius = data.Range * tileWorldSizeX;
         attackIntaval = data.AttackSpeed;
         var hp = GetComponent<EnemyHealth>();
         hp.AddData(data.Hp);
@@ -68,7 +68,6 @@ public class Enemy : MonoBehaviour
             effectObj = transform.Find("Effect")?.gameObject;
         }
         SetShader(enemyData.Level);
-        Debug.Log($"À¯´Ö ·¹º§:    {enemyData.Level}");      
 
     }
 
@@ -102,40 +101,55 @@ public class Enemy : MonoBehaviour
 
         if (distanceToTarget < 0.01f)
         {
-
-            if (currentPoint <= 9 && (currentPoint == 1 || currentPoint % 2 == 1 || currentPoint == 6))
+            if (Define.waveCount < 6)
             {
-                Vector2 scale = transform.localScale;
-                scale.x *= -1;
-                transform.localScale = scale;
+                if (currentPoint <= 9 && (currentPoint == 1 || currentPoint % 2 == 1 || currentPoint == 6))
+                {
+                    localScale();
+                }
             }
-
+            else if (Define.waveCount < 11)
+            {
+                if (currentPoint == 1 || currentPoint % 2 == 1)
+                {
+                    localScale();
+                }
+            }
+            else
+            {
+                if(currentPoint ==1||currentPoint ==3)
+                {
+                    localScale();
+                }
+            }
             currentPoint++;
             if (currentPoint == currentPath.wayindex)
             {
                 currentPoint = 0;
             }
 
-
             targetposition = currentPath.GetWayPoint(currentPoint);
-
         }
+    }
+
+    private void localScale()
+    {
+        Vector2 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     private void TypeAttack(GameObject other)
     {
-        anim.SetTrigger("Attack");
         switch (data.Type)
         {
             case EnemyTypes.Knight:
                 Attack(other);
                 break;
             case EnemyTypes.Archer:
-                Debug.Log("Archer Attack");
                 Shot(other);
                 break;
             case EnemyTypes.Wizard:
-                Debug.Log("wizard Attack");
                 MagicShot(other);
                 break;
         }
@@ -155,7 +169,6 @@ public class Enemy : MonoBehaviour
     }
     private void Shot(GameObject target)
     {
-        Debug.Log("Shot");
         GameObject arrow = pool.GetPoolobject();
         arrow.transform.position = transform.position;
         arrow.SetActive(true);
@@ -166,7 +179,6 @@ public class Enemy : MonoBehaviour
 
     private void MagicShot(GameObject target)
     {
-        Debug.Log("Fire");
         GameObject ball = pool.GetPoolobject();
         ball.transform.position = transform.position;
         ball.SetActive(true);
@@ -185,12 +197,12 @@ public class Enemy : MonoBehaviour
     }
 
     private void SetShader(int level)
-  {
+    {
         //material.EnableKeyword("OUTBASE_ON");
         //material.EnableKeyword("OUTLINE_ON");
         switch (level)
         {
-            case 1:               
+            case 1:
                 break;
             case 2:
                 material.EnableKeyword("OUTBASE_ON");

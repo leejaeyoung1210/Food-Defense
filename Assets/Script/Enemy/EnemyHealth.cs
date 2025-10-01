@@ -13,7 +13,7 @@ public class EnemyHealth : Living
 
     public GameObject damageTextPrefab;
 
-    private int gold = 4;
+    private int gold = 30;
 
     Queue<GameObject> damages = new Queue<GameObject>();
     GameObject dmgObj;
@@ -55,11 +55,10 @@ public class EnemyHealth : Living
 
     IEnumerator Death()
     {
-        Debug.Log("Enemy Dead");
         healthSlider.gameObject.SetActive(false);
         yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
         WaveManager.enemyTotalCount--;
-        Define.gold += gold + Define.waveCount;
+        Define.gold += gold * Define.waveCount;
         OnAnyEnemyRemoved?.Invoke(gameObject);//포탑 배열에서 지워지기 위함 
 
         foreach(var damagePopup in damages)

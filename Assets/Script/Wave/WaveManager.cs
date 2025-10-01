@@ -12,6 +12,8 @@ public class WaveManager : MonoBehaviour
     public float timer { get; private set; }
     public EnemySpawner enemySpawner;
 
+    public EnemySpawner enemySpawner2;
+
     public UIManager uiManager; 
 
     public static int enemyTotalCount = 0;
@@ -19,9 +21,11 @@ public class WaveManager : MonoBehaviour
     public GameObject warningUi;
 
     public StageManager stageManager;
+  
 
-    void Start()
+    private  void Start()
     {
+        enemySpawner2.gameObject.SetActive(false);
         waveTable = DataTableManager.WaveTableData;
         enemyTotalCount = 0;
         if (waveTable == null)
@@ -39,15 +43,17 @@ public class WaveManager : MonoBehaviour
 
 
     IEnumerator WaveSet() // 웨이브 단계
-    {
+    {  // 테스트용 
+        Define.gold = 100000000;        
         for (int i = 0; i < waveTable.Count; i++)
         {
             var wd = waveTable.GetByIndex(i);
+            Debug.Log($"웨이브 {wd.Id} : {wd.Name}"); // 테스트용
             if (wd == null)
             {
                 continue; // 혹은 yield break
             }
-            if(i%5==0 && i!=0)
+            if ((i == 5||i==10) && i != 0)
             {
                 stageManager.LoadStage(i / 5); // 0,1,2,3...
             }
@@ -57,6 +63,10 @@ public class WaveManager : MonoBehaviour
 
             waveActive = true;
             Define.waveCount++;
+            if (Define.waveCount>10)
+            {
+                enemySpawner2.gameObject.SetActive(true);
+            }
 
             yield return StartCoroutine(OnWave(wd));
             yield return new WaitForSeconds(1f);
@@ -90,8 +100,15 @@ public class WaveManager : MonoBehaviour
                 var enemy = slot.enemyData;
                 if (enemy != null)
                 {
-                    enemySpawner.Spawn(enemy, enemySpawner.transform.position);
+                    enemySpawner.Spawn(enemy, enemySpawner.transform.position,false);
                     enemyTotalCount++;
+
+                    if (enemySpawner2.gameObject.activeSelf)
+                    {
+                        enemySpawner2.Spawn(enemy, enemySpawner2.transform.position,true);
+                        enemyTotalCount++;
+                    }
+                    
                 }
                 yield return new WaitForSeconds(1f);
             }

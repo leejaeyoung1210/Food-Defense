@@ -103,8 +103,7 @@ public class SpotTowerMove : MonoBehaviour
                 if (Vector2.Distance(current.tower.transform.position, endPos) < 0.001f)
                 {
                     current.isSpawning = false; //기존위치비우고
-                    targetSpot.isSpawning = true;// 이동위치 활서오하
-                    targetSpot.tower = current.tower;//타워정보 넘겨주고 
+                    targetSpot.isSpawning = true;// 이동위치 활서오하                    
                     current.tower = null; // 정보초기화 
 
                     ResetState(); return;
@@ -213,6 +212,8 @@ public class SpotTowerMove : MonoBehaviour
             //드래그 이동시 
             if (targetSpot.isSpawning == false) //포탑 없는거 바로 이동 
             {
+                targetSpot.tower = current.tower; 
+                
                 moving = true;
             }
             else //타워가 있음        targetSpot          

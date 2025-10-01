@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class StartScene : MonoBehaviour
 {
-    [SerializeField] private Button startBut;
-    [SerializeField] private Button endBut;
+    public void NextScene()
+    {
+        SceneManager.LoadScene("LobbyScene");
+    }
 
 
     public void StartGame()

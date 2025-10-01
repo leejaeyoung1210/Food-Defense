@@ -78,7 +78,7 @@ public class TowerSpawner : MonoBehaviour
 
         for (int i = 0; i < towerSpot.spotPoints.Count; i++)
         {
-            if (towerSpot.spotPoints[i].isSpawning == false)
+            if (towerSpot.spotPoints[i].isSpawning == false && towerSpot.spotPoints[i].tower ==null)
             {
                 Define.gold = Mathf.Max(0, Define.gold -= Define.spawnCost);
                 GameObject newtower = Instantiate(prefab, towerSpot.spotPoints[i].point, Quaternion.identity);

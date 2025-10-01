@@ -171,7 +171,6 @@ public class Tower : MonoBehaviour
     }
     private void MagicShot(GameObject target)
     {
-        Debug.Log("Fire");
         GameObject ball = pool.GetPoolobject();
         ball.transform.position = transform.position;
         ball.SetActive(true);

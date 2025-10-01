@@ -12,6 +12,7 @@ TagManager:
   - Pause
   - UiMgr
   - Spawn2
+  - SFX
   layers:
   - Default
   - TransparentFX

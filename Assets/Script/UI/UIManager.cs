@@ -48,9 +48,17 @@ public class UIManager : MonoBehaviour
 
     private bool justOpenPopup = false;
 
-    
+    public AudioSource sfxAudio;
+
+    public AudioClip butClip;
+    public AudioClip upSellClip;
+
+    public AudioSource bgmAudio;
+
+
     public void TowerUIOpen()
-    {        
+    {
+        sfxAudio.PlayOneShot(butClip);
         if (towerInformation != null)
         {
         
@@ -67,6 +75,7 @@ public class UIManager : MonoBehaviour
     //Synergy
     public void SynergyUIOpen()
     {
+        sfxAudio.PlayOneShot(butClip);
         if (towerSynergy != null)
         {
 
@@ -104,7 +113,7 @@ public class UIManager : MonoBehaviour
     public void OpenUI(GameObject towerObject)
     {
         CloseUI();
-
+        sfxAudio.PlayOneShot(butClip);
         Tower tower = towerObject.GetComponent<Tower>();
         currentTower = tower;
 
@@ -119,7 +128,7 @@ public class UIManager : MonoBehaviour
     public void Upgrade()
     {
         if (currentTower == null) return;
-
+        sfxAudio.PlayOneShot(upSellClip);
         if (Define.gold >= currentTower.data.UpgradeCost && currentTower.data.Upgradeable)
         {
             Define.gold -= currentTower.data.UpgradeCost;
@@ -140,7 +149,7 @@ public class UIManager : MonoBehaviour
     public void Sell()
     {
         if (currentTower == null) return;
-
+        sfxAudio.PlayOneShot(upSellClip);
         Define.gold += currentTower.data.ResellPrice;
 
         var spot = currentTower.GetComponentInParent<TowerHealth>().GetSpot();
@@ -258,11 +267,17 @@ public class UIManager : MonoBehaviour
 
     public void PauseOpen()
     {
+        sfxAudio.PlayOneShot(butClip);
         pause.gameObject.SetActive(true);
         Time.timeScale = 0f;
+        bgmAudio.Stop();
+
     }
     public void PauseClose()
     {
+        bgmAudio.loop = true;   
+        bgmAudio.Play();   
+
         pause.gameObject.SetActive(false);
         Time.timeScale = 1f;
     }

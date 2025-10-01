@@ -5,14 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class StartScene : MonoBehaviour
 {
+    public AudioSource audio;
+    public AudioClip butClip;   
     public void NextScene()
     {
+        audio.PlayOneShot(butClip);
         SceneManager.LoadScene("LobbyScene");
     }
 
 
     public void StartGame()
     {
+        audio.PlayOneShot(butClip);
         Define.waveCount = 0;
         Define.gold = 300;
         Define.spawnCost = 10;
@@ -25,6 +29,7 @@ public class StartScene : MonoBehaviour
 
     public void EndGame()
     {
+        audio.PlayOneShot(butClip); 
         Application.Quit();
     }
 

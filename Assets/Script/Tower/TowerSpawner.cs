@@ -19,6 +19,9 @@ public class TowerSpawner : MonoBehaviour
       
     public UIManager manager;   
 
+    public AudioSource audio;
+    public AudioClip spawnClip;
+
     private void Awake()
     {
         prefabs = new Dictionary<TowerType, GameObject>();
@@ -89,7 +92,8 @@ public class TowerSpawner : MonoBehaviour
                 Define.spawnCost += 1;
 
                 bool allFiled = towerSpot.AllSpot();
-                manager.SetSpawnButton(!allFiled);   
+                manager.SetSpawnButton(!allFiled);  
+                audio.PlayOneShot(spawnClip);   
                 break;
             }
         }

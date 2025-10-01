@@ -14,7 +14,7 @@ public class StageManager : MonoBehaviour
     public SpriteRenderer backgroundRenderer;
     public List<Sprite> backgrounds;
     public List<Tilemap> tilemaps;
-    public List<waypoint> waypoints;
+    public List<waypoint> waypoints;    
 
     public GameObject enemyspawner;
 
@@ -23,6 +23,10 @@ public class StageManager : MonoBehaviour
     public List<TowerSpot> towerSpots;
 
     public UIManager uiManager;
+
+    public List<AudioClip> stageBGM;
+
+   public AudioSource audioSource;
 
     private int currentStage = 0;
 
@@ -34,6 +38,7 @@ public class StageManager : MonoBehaviour
         enemyspawner.gameObject.SetActive(false);
         towerSpots[currentStage].MarkBuildableTiles();
         towerSpawner.SetTowerSpot(towerSpots[currentStage]);
+        audioSource.clip = stageBGM[currentStage];
     }
 
     public void LoadStage(int stageIndex)
@@ -55,6 +60,9 @@ public class StageManager : MonoBehaviour
         waypoints[stageIndex].way.SetActive(true);
         towerSpots[stageIndex].MarkBuildableTiles();
         towerSpawner.SetTowerSpot(towerSpots[stageIndex]);
+        audioSource.clip = stageBGM[stageIndex];
+        audioSource.loop = true;
+        audioSource.Play(); 
         uiManager.SetSpawnButton(true);
 
 

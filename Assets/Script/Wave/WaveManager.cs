@@ -21,7 +21,10 @@ public class WaveManager : MonoBehaviour
     public GameObject warningUi;
 
     public StageManager stageManager;
-  
+
+    public AudioSource audio;
+    public AudioClip warringClip;  
+
 
     private  void Start()
     {
@@ -75,6 +78,7 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator WaveCount()
     {
+        audio.Stop();
         warningUi.SetActive(false);
         uiManager.SetTimerTextColor(Color.yellow);  
         timer = 3f;        
@@ -153,6 +157,8 @@ public class WaveManager : MonoBehaviour
             if (timer <= 5f)
             {
                 warningUi.SetActive(true);
+                audio.PlayOneShot(warringClip);
+
             }            
         }
     }

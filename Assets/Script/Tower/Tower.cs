@@ -4,6 +4,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Tower : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Tower : MonoBehaviour
 
     private ObjectPooler pool;  
 
+    public float baseAttackInterval = 1f;   
     public float attackIntaval = 1f;
     public float lastAttack;
     private List<GameObject> enemies = new List<GameObject>();
@@ -20,6 +22,9 @@ public class Tower : MonoBehaviour
     private  GameObject effectObj;
 
     public Tilemap tilemap;
+
+    private float baseDamage = 0f;  
+    private float damage = 0f; 
 
     private void Awake()
     {
@@ -35,14 +40,17 @@ public class Tower : MonoBehaviour
         float tileWorldSizeX = tileSize.x;
 
         data = towerData;
-        if(towerData.spriteIcon ==null)
+        baseDamage = data.AttackPower;  
+        damage = baseDamage;    
+        if (towerData.spriteIcon ==null)
         {
             Debug.Log($"{towerData.Name},{towerData.Icon}");
         }
         towerSptrite.sprite = towerData.spriteIcon;
         towerRange.radius = data.Range * tileWorldSizeX;
         //towerRange.radius = (data.Range * tileWorldSizeX) / 2f;
-        attackIntaval = data.AttackSpeed;
+        baseAttackInterval = data.AttackSpeed;
+        attackIntaval = baseAttackInterval;
         var hp = GetComponent<TowerHealth>();
         hp.AddData(data.Hp);
         if (data.Type == TowerType.Warrior)
@@ -137,7 +145,7 @@ public class Tower : MonoBehaviour
         effectObj.transform.rotation = Quaternion.AngleAxis(angle-90f, Vector3.forward);
 
         effectObj.SetActive(true);
-        target.GetComponent<IDamagable>().OnDamage(data.AttackPower, transform.position);
+        target.GetComponent<IDamagable>().OnDamage(damage, transform.position);
         StartCoroutine(Damage());  
     }
 
@@ -159,7 +167,7 @@ public class Tower : MonoBehaviour
         arrow.SetActive(true);
      
         Projectile projectile = arrow.GetComponent<Projectile>();   
-        projectile.Set(target.transform,data.AttackPower); 
+        projectile.Set(target.transform, damage); 
     }
     private void MagicShot(GameObject target)
     {
@@ -169,7 +177,19 @@ public class Tower : MonoBehaviour
         ball.SetActive(true);
 
         MagicProjectile magicprojectile = ball.GetComponent<MagicProjectile>();
-        magicprojectile.Set(target.transform, data.AttackPower);
+        magicprojectile.Set(target.transform, damage);
+    }
+
+    public void ApplyBuff(float power,float speed)
+    {
+        damage = baseDamage + (baseDamage * power);
+        attackIntaval = Mathf.Max(0.1f, baseAttackInterval - (baseAttackInterval * speed));
+    }  
+
+    public void ResetBuff()
+    {
+        damage = baseDamage;
+        attackIntaval = baseAttackInterval;
     }
 
 }

@@ -1,8 +1,8 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class EnemyHealth : Living
 {
@@ -14,6 +14,9 @@ public class EnemyHealth : Living
     public GameObject damageTextPrefab;
 
     private int gold = 4;
+
+    Queue<GameObject> damages = new Queue<GameObject>();
+    GameObject dmgObj;
 
     private void Awake()
     {
@@ -37,7 +40,7 @@ public class EnemyHealth : Living
         base.OnDamage(damage, hitPoint);
         healthSlider.value = health / MaxHealth;
 
-        ShowDamageText((int)damage);    
+        ShowDamageText((int)damage);
     }
 
     protected override void Die()
@@ -48,6 +51,8 @@ public class EnemyHealth : Living
 
     }
 
+
+
     IEnumerator Death()
     {
         Debug.Log("Enemy Dead");
@@ -56,16 +61,28 @@ public class EnemyHealth : Living
         WaveManager.enemyTotalCount--;
         Define.gold += gold + Define.waveCount;
         OnAnyEnemyRemoved?.Invoke(gameObject);//포탑 배열에서 지워지기 위함 
+
+        foreach(var damagePopup in damages)
+        {
+            Destroy(damagePopup);
+        }
+
+        damages.Clear();
+
         Destroy(gameObject);
+        
     }
 
     private void ShowDamageText(int damage)
     {
-        GameObject dmgObj = Instantiate(damageTextPrefab, transform.position, Quaternion.identity);
-        dmgObj.transform.SetParent(null); 
+        dmgObj = Instantiate(damageTextPrefab, transform.position, Quaternion.identity);
+        dmgObj.transform.SetParent(null);
+
         var text = dmgObj.GetComponentInChildren<TextMeshProUGUI>();
         text.text = damage.ToString();
-        
+
+        damages.Enqueue(dmgObj);
+
         StartCoroutine(HideDamageText(dmgObj, text));
     }
     IEnumerator HideDamageText(GameObject dam, TextMeshProUGUI text)
@@ -73,10 +90,10 @@ public class EnemyHealth : Living
         float duration = 1f;
         float elapsed = 0f;
         Vector2 startPos = dam.transform.position;
-        Vector2 endPos = startPos + new Vector2(startPos.x, startPos.y + 0.3f); 
+        Vector2 endPos = startPos + new Vector2(startPos.x, startPos.y + 0.3f);
 
         Color startColor = text.color;
-
+        
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
@@ -87,8 +104,8 @@ public class EnemyHealth : Living
             text.color = new Color(startColor.r, startColor.g, startColor.b, 1 - t);
 
             yield return null;
-        }
-
+        }       
         Destroy(dam);
+        damages.Dequeue();
     }
 }

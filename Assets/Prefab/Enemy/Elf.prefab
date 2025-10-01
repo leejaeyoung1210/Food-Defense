@@ -113,6 +113,7 @@ MonoBehaviour:
   currentPath: {fileID: 0}
   attackIntaval: 1
   lastAttack: 0
+  tilemap: {fileID: 0}
 --- !u!58 &2376679433365602172
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -472,6 +473,26 @@ PrefabInstance:
     - target: {fileID: 8790607664082534458, guid: 260398773f3e3d44da2455d46860b6df, type: 3}
       propertyPath: m_text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790607664082534458, guid: 260398773f3e3d44da2455d46860b6df, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c4276cc0513b91449af6639e35089e9, type: 2}
+    - target: {fileID: 8790607664082534458, guid: 260398773f3e3d44da2455d46860b6df, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790607664082534458, guid: 260398773f3e3d44da2455d46860b6df, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790607664082534458, guid: 260398773f3e3d44da2455d46860b6df, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6991415101136420970, guid: 0c4276cc0513b91449af6639e35089e9, type: 2}
+    - target: {fileID: 8790607664082534458, guid: 260398773f3e3d44da2455d46860b6df, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

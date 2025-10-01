@@ -16,6 +16,7 @@ public class TowerData
     public int Id { get; set; }
     public string Name { get; set; }
     public TowerType Type { get; set; }
+    public int Combo_type { get; set; }
     public int Level { get; set; }
     public int NextId { get; set; }
     public bool Upgradeable { get; set; }

@@ -22,9 +22,7 @@ public class DataTableManager
         var waveSlotTable = new WaveSlotTable();
         waveSlotTable.enemyTable = enemyTable;
         waveSlotTable.Load(DataTableIds.Slot);
-        tables.Add(DataTableIds.Slot, waveSlotTable);
-     
-
+        tables.Add(DataTableIds.Slot, waveSlotTable);    
 
         var waveTable = new WaveTable();
         waveTable.slotTable = waveSlotTable;
@@ -34,12 +32,14 @@ public class DataTableManager
         var towerTable = new TowerTable();
         towerTable.Load(DataTableIds.Tower);
         tables.Add(DataTableIds.Tower, towerTable);
-        
+
+        var synergyTable = new SynergryTable();
+        synergyTable.Load(DataTableIds.Synergy);
+        tables.Add(DataTableIds.Synergy, synergyTable);
+
         //var skillTable = new SkillTable();  
         //skillTable.Load(DataTableIds.Skill);
         //tables.Add(DataTableIds.Tower, skillTable);
-
-
     }
 
     public static EnemyTable EnemyTableData
@@ -71,6 +71,13 @@ public class DataTableManager
             return Get<TowerTable>(DataTableIds.Tower);
         }
     }
+    public static SynergryTable SynergyTableData
+    {
+        get
+        {
+            return Get<SynergryTable>(DataTableIds.Synergy);
+        }
+    }   
 
     //public static SkillTable SkillTableData
     //{

@@ -42,6 +42,45 @@ public class UIManager : MonoBehaviour
     private Tower currentTower;
     public Button upgradeButton;
 
+    public GameObject towerInformation;
+
+    public GameObject towerSynergy;
+
+    private bool justOpenPopup = false;
+
+    
+    public void TowerUIOpen()
+    {        
+        if (towerInformation != null)
+        {
+        
+            towerInformation.SetActive(true);
+            justOpenPopup = true;
+        }
+    }
+
+    public void TowerUIClose()
+    {
+        if (towerInformation != null)
+            towerInformation.SetActive(false);
+    }
+    //Synergy
+    public void SynergyUIOpen()
+    {
+        if (towerSynergy != null)
+        {
+
+            towerSynergy.SetActive(true);
+            justOpenPopup = true;
+        }
+    }
+
+    public void SynergyClose()
+    {
+        if (towerSynergy != null)
+            towerSynergy.SetActive(false);
+    }
+
 
     public bool CheckTouchInUI(GameObject target)
     {
@@ -51,9 +90,9 @@ public class UIManager : MonoBehaviour
             position = Input.mousePosition
         }, targets);
 
-        foreach(var tar in targets)
+        foreach (var tar in targets)
         {
-            if(tar.gameObject == target)
+            if (tar.gameObject == target)
             {
                 return true;
             }
@@ -108,11 +147,16 @@ public class UIManager : MonoBehaviour
         if (spot != null)
         {
             spot.tower = null;
-            spot.isSpawning = false;
+            spot.isSpawning = false;            
+        }
+
+        if (!spawnBut.interactable)
+        {
+            spawnBut.interactable = true;
         }
 
         Destroy(currentTower.gameObject);
-        CloseUI();
+        CloseUI();        
     }
 
     private void RefreshUI()
@@ -154,12 +198,33 @@ public class UIManager : MonoBehaviour
             GameOver();
         }
 
-        if(Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
             if (upPanel.activeSelf && !CheckTouchInUI(upPanel))
             {
                 CloseUI();
             }
+            if (towerInformation.activeSelf && !justOpenPopup)
+            {
+                if (!CheckTouchInUI(towerInformation))
+                {
+                    TowerUIClose();
+                }
+            }
+            if (towerSynergy.activeSelf && !justOpenPopup)
+            {
+                if (!CheckTouchInUI(towerSynergy))
+                {
+                    SynergyClose();
+                }
+            }
+        }
+
+       
+
+        if(justOpenPopup)
+        {
+            justOpenPopup = false;
         }
     }
 
@@ -222,6 +287,12 @@ public class UIManager : MonoBehaviour
     {
         spawnBut.interactable = isActive;
     }
+
+    public void SetTimerTextColor(Color color)
+    {
+        timerText.color = color;
+    }
+
 
 
 }

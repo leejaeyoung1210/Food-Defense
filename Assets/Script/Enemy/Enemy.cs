@@ -11,7 +11,9 @@ using static UnityEngine.GraphicsBuffer;
 public class Enemy : MonoBehaviour
 {
     public EnemyData data;
+    
     public float enemySpeed = 1f;
+    public float baseSpeed = 1f;    
 
     private Vector2 targetposition;
 
@@ -53,7 +55,9 @@ public class Enemy : MonoBehaviour
         float tileWorldSizeX = tileSize.x;
 
         data = enemyData;
-        enemySpeed = data.MoveSpeed;
+        
+        baseSpeed = data.MoveSpeed;
+        enemySpeed = baseSpeed;
         enemyRange.radius = data.Range* tileWorldSizeX;
         attackIntaval = data.AttackSpeed;
         var hp = GetComponent<EnemyHealth>();
@@ -171,6 +175,15 @@ public class Enemy : MonoBehaviour
         magicprojectile.Set(target.transform, data.AttackPower);
     }
 
+    public void ApplySlow(float value)
+    {
+        enemySpeed = baseSpeed * (1f - value);
+    }
+    public void ResetSlow()
+    {
+        enemySpeed = baseSpeed;
+    }
+
     private void SetShader(int level)
   {
         //material.EnableKeyword("OUTBASE_ON");
@@ -185,14 +198,14 @@ public class Enemy : MonoBehaviour
                 material.SetFloat("_OutlineWidth", 0.005f);
                 Debug.Log($"[Shader] OutlineColor: {material.GetColor("_OutlineColor")}");
                 Debug.Log($"[Shader] OutlineWidth: {material.GetFloat("_OutlineWidth")}");
-                Debug.Log($"[Shader] Distortion Amount: {material.GetFloat("_Amount")}");
+                //Debug.Log($"[Shader] Distortion Amount: {material.GetFloat("_Amount")}");
                 break;
             case 3:
                 material.EnableKeyword("OUTBASE_ON");
                 material.SetColor("_OutlineColor", new Color(0, 255, 255, 255));
                 material.SetFloat("_OutlineWidth", 0.005f);
                 //material.EnableKeyword("OUTLINE_USES_DISTORTION");
-                material.SetFloat("_Amount", 0.05f);
+                //material.SetFloat("_Amount", 0.05f);
 
                 material.SetColor("_ShineColor", new Color32(225, 255, 224, 255));
                 material.SetFloat("_ShineWidth", 0.08f);
@@ -203,7 +216,7 @@ public class Enemy : MonoBehaviour
                 material.SetColor("_OutlineColor", new Color(255, 0, 255, 255));
                 material.SetFloat("_OutlineWidth", 0.005f);
                 //material.EnableKeyword("OUTLINE_USES_DISTORTION");
-                material.SetFloat("_Amount", 0.05f);
+                //material.SetFloat("_Amount", 0.05f);
 
                 material.SetColor("_ShineColor", new Color32(255, 209, 255, 255));
                 material.SetFloat("_ShineWidth", 0.08f);
@@ -214,7 +227,7 @@ public class Enemy : MonoBehaviour
                 material.SetColor("_OutlineColor", new Color32(255, 69, 0, 255));
                 material.SetFloat("_OutlineWidth", 0.005f);
                 //material.EnableKeyword("OUTLINE_USES_DISTORTION");
-                material.SetFloat("_Amount", 0.05f);
+                //material.SetFloat("_Amount", 0.05f);
 
                 material.SetFloat("_HsvShift", 38f);
                 material.SetFloat("_HsvSaturation", 1f);
@@ -229,7 +242,7 @@ public class Enemy : MonoBehaviour
                 material.SetColor("_OutlineColor", new Color32(255, 215, 0, 255));
                 material.SetFloat("_OutlineWidth", 0.005f);
                 //material.EnableKeyword("OUTLINE_USES_DISTORTION");
-                material.SetFloat("_Amount", 0.05f);
+                //material.SetFloat("_Amount", 0.05f);
 
                 material.SetFloat("_HsvShift", 180f);
                 material.SetFloat("_HsvSaturation", 1f);

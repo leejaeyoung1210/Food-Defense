@@ -15,7 +15,7 @@ public class TowerSpawner : MonoBehaviour
 
     private Dictionary<TowerType, GameObject> prefabs;
 
-    public TowerSpot towerSpot;
+    private TowerSpot towerSpot;
       
     public UIManager manager;   
 
@@ -28,10 +28,10 @@ public class TowerSpawner : MonoBehaviour
         }
     }
 
-    public void GoldCheat()
+    public void SetTowerSpot(TowerSpot newSpot)
     {
-        Define.gold += 100;
-    }
+        towerSpot = newSpot;
+    }   
 
     public void SpawnTower()
     {

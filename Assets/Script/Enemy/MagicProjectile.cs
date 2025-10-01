@@ -64,7 +64,7 @@ public class MagicProjectile : MonoBehaviour
             return;
         }
 
-        var hit = Physics2D.OverlapCircleAll(transform.position, 5f);        
+        var hit = Physics2D.OverlapCircleAll(transform.position, 0.5f);        
         foreach (var h in hit)
         {
            if (h.CompareTag("Tower"))

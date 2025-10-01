@@ -12,15 +12,20 @@ public class WaveManager : MonoBehaviour
     public float timer { get; private set; }
     public EnemySpawner enemySpawner;
 
+    public UIManager uiManager; 
 
     public static int enemyTotalCount = 0;
+
+    public GameObject warningUi;
+
+    public StageManager stageManager;
 
     void Start()
     {
         waveTable = DataTableManager.WaveTableData;
-        enemyTotalCount = 0;                          
+        enemyTotalCount = 0;
         if (waveTable == null)
-        {            
+        {
             return;
         }
         StartCoroutine(WaveSet());
@@ -41,7 +46,15 @@ public class WaveManager : MonoBehaviour
             if (wd == null)
             {
                 continue; // 혹은 yield break
-            }            
+            }
+            if(i%5==0 && i!=0)
+            {
+                stageManager.LoadStage(i / 5); // 0,1,2,3...
+            }
+
+
+            yield return StartCoroutine(WaveCount());
+
             waveActive = true;
             Define.waveCount++;
 
@@ -50,8 +63,22 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    IEnumerator WaveCount()
+    {
+        warningUi.SetActive(false);
+        uiManager.SetTimerTextColor(Color.yellow);  
+        timer = 3f;        
+        while (timer > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            timer--;            
+        }
+        uiManager.SetTimerTextColor(Color.white);
+        //yield return new WaitForSeconds(1f);
+    }
+
     IEnumerator OnWave(WaveData wd) // 웨이브 플레이
-    {        
+    {
         timer = wd.waveTime;
         Define.gold += wd.bonusCoin;
         foreach (var slot in wd.slots)
@@ -84,6 +111,7 @@ public class WaveManager : MonoBehaviour
 
             if (enemyTotalCount <= 0)
             {
+                waveActive = false;
                 if (Define.waveCount > waveTable.Count) //클리어 조건
                 {
                     GameClear();
@@ -95,7 +123,7 @@ public class WaveManager : MonoBehaviour
             {
                 waveActive = false;
                 GameOver();
-            }        
+            }
             yield return null;
         }
     }
@@ -105,6 +133,10 @@ public class WaveManager : MonoBehaviour
         if (waveActive)
         {
             timer -= Time.deltaTime;
+            if (timer <= 5f)
+            {
+                warningUi.SetActive(true);
+            }            
         }
     }
 
@@ -116,15 +148,15 @@ public class WaveManager : MonoBehaviour
     private void GameClear()
     {
         Time.timeScale = 0f;
-        Define.gameClear = true;    
+        Define.gameClear = true;
     }
 
     private void GameOver()
     {
-        Time.timeScale = 0f;        
-        Define.gameOver = true; 
+        Time.timeScale = 0f;
+        Define.gameOver = true;
     }
-        
+
 
 
 
